@@ -22,6 +22,14 @@ Three things to know that weren't obvious before running the procedure:
 
 A fourth finding worth noting: **Claude Desktop was NOT installed on fragtnix** (probed in Step 1). The original procedure assumed it might be; on fragtnix specifically, Step 5 is a no-op. The probe in Step 1 tells you definitively per machine.
 
+5. **DO NOT run `chezmoi apply` on fragtnix after the wipe.** The `dotfiles` source repo is still on disk at `~/airepos/common/dotfiles/` (re-cloned in Step 8 so it's available for editing during Phase 2-5). But the chezmoi binary, installed via brew, will happily re-deploy the full regime if you run `chezmoi init --source ~/airepos/common/dotfiles && chezmoi apply` (or even just `chezmoi apply` after a stray `chezmoi init`).
+
+   We hit this during the first smoke-test run: a manual `chezmoi apply` restored all 8 symlinks under `~/.claude/` pointing at `dotclaude/home/*`, plus settings.json. Result: the legacy U-tier skills (which carry `name: dc:<skill>` in their frontmatter) reappeared in Claude Code's autocomplete alongside harness's 9 SOPs, breaking the "virgin harness workshop" property. The fix was to re-wipe ~/.claude symlinks + settings.json + ~/.config/chezmoi.
+
+   **Until Phase 5b cuts fragtnix over to the slim regime, fragtnix must stay chezmoi-quiet.** If you need to edit dotfiles or dotclaude during Phase 2-4, edit the source repos at `~/airepos/common/{dotfiles,dotclaude}/` and commit/push — *do not apply locally*. Phase 5b will re-init chezmoi with the slimmed source.
+
+   If you suspect chezmoi has been applied (symlinks under `~/.claude/` pointing at `dotclaude/home/*`, or `~/.config/chezmoi/` populated), re-run a partial wipe: remove just the chezmoi-deployed symlinks (keeping `~/.claude/.credentials.json` and Claude Code's own session state), then re-run `bash bootstrap/setup-host.sh` to restore harness's `.claude/{agents,commands}/` symlinks.
+
 ---
 
 ## Step 1 — Probe current state
