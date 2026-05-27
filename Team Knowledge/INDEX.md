@@ -10,6 +10,7 @@ Seed set (Phase 1):
 - `[[SOP-claim-task]]` — agent takes ownership via `git mv`
 - `[[SOP-handoff-task]]` — pass to next callsign
 - `[[SOP-close-task]]` — finalize + journal extraction
+- `[[SOP-close-session]]` — wrap the session, log durably, propose graduations
 - `[[SOP-escalate-blocked]]` — pause cleanly with TOWER notification
 - `[[SOP-hire-agent]]` — SCOUT adds a new callsign
 - `[[SOP-file-delegation]]` — CASCADE files GH issue + local mirror
@@ -19,7 +20,12 @@ Phase 2 populates the rest from Phase 0 audit PORT items.
 
 ## Guidelines
 
-Empty in Phase 1. Phase 2 fills `GL-NNN-*.md` from PORTed `dotclaude/home/rules/`, `dotclaude/home/memory/feedback_*`, and split convention docs from `git-organizer`.
+Policy set (Phase 1 — Session A):
+
+- `[[GL-001-commit-autonomy]]` — team commits unsigned on feature branches; principal signs at merge
+- `[[GL-002-credential-custody]]` — 1P-canonical + sops-on-disk two-tier model; age key as session bridge
+
+Phase 2 fills `GL-003`+ from PORTed `dotclaude/home/rules/`, `dotclaude/home/memory/feedback_*`, and split convention docs from `git-organizer`.
 
 ## Workstreams
 

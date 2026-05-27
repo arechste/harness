@@ -2,11 +2,25 @@
 
 **Purpose:** Make fragtnix a virgin Claude installation before harness scaffolding begins there. Removes the currently chezmoi-deployed `~/.claude/` regime (rules, memories, U-tier skills) and any local clones of `dotclaude` / `aitools-common`, so that when `ADAPTER-PROMPT.md` is pasted into a fresh Claude session on fragtnix, harness can establish its own scaffold from scratch without interference.
 
-**Status:** Not yet executed. Documented here so that when Phase 1 begins on fragtnix, the procedure is ready to run.
+**Status:** Executed on fragtnix 2026-05-27. Procedure validated end-to-end. Real-world findings added inline below — keep this document up-to-date for future workshop migrations or re-cutovers.
 
 **Prerequisite:** User is physically near fragtnix (or has a working SSH path that can authenticate 1P signing if needed). Each destructive step requires explicit user approval — the agent must NOT execute these in autonomous mode.
 
 **Rollback property:** Every removal in this procedure is reversible — `chezmoi apply` re-deploys `~/.claude/`; `git clone` restores the dotclaude / aitools-common clones; the pre-removal tarball is the safety net.
+
+---
+
+## Real-world findings (2026-05-27 execution on fragtnix)
+
+Three things to know that weren't obvious before running the procedure:
+
+1. **`~/.ssh/id_ed25519.pub` gap.** chezmoi was *not* the canonical source of this file — it's deployed by some other path (likely an out-of-band one-time write). After wiping `~/.claude/` and skipping `chezmoi apply`, the pubkey file was missing, breaking `op-ssh-sign` for git commits. Symptom: `error: 1Password: agent returned an error / fatal: failed to write commit object`. Fix: `git config --get user.signingkey > ~/.ssh/id_ed25519.pub && chmod 644 ~/.ssh/id_ed25519.pub` — the full pubkey is stored inline in `~/.gitconfig` as `user.signingkey`. `bootstrap/setup-host.sh` automates this restoration; alternatively, harness ships `.gitconfig` setting `commit.gpgsign=false` for team commits, which avoids the need entirely on the team-work path.
+
+2. **`enabledPlugins: {}` is the expected baseline post-wipe.** `~/.claude.json` regenerates on first Claude Code launch with no plugins enabled. The directory `~/.claude/plugins/` still appears (plugin infra files, marketplace cache), but it's empty of active plugins. This is correct — don't be tempted to manually install aitools-common; harness has its own adapter layer.
+
+3. **`chezmoi source-path` falls back to `~/.local/share/chezmoi`** when `~/.config/chezmoi/` is wiped. That default path *does not exist* on a chezmoi-free fragtnix, so accidentally running `chezmoi apply` errors out. Harmless — no rogue deployment risk. If you ever want to fully re-init chezmoi for Phase 5b cutover, you'll run `chezmoi init --source ~/airepos/common/dotfiles` explicitly.
+
+A fourth finding worth noting: **Claude Desktop was NOT installed on fragtnix** (probed in Step 1). The original procedure assumed it might be; on fragtnix specifically, Step 5 is a no-op. The probe in Step 1 tells you definitively per machine.
 
 ---
 
@@ -107,15 +121,43 @@ ls ~/airepos/common/
 pgrep -af '[c]laude'
 ```
 
-## Step 8 — Proceed to Phase 1 Step 1: clone harness
+## Step 8 — Clone harness and run bootstrap
 
 ```bash
-git clone https://github.com/arechste/harness.git ~/airepos/common/harness
-cd ~/airepos/common/harness
-# Paste ADAPTER-PROMPT.md into a fresh Claude session
+mkdir -p ~/airepos/common
+cd ~/airepos/common
+git clone https://github.com/arechste/dotfiles.git    # source-only, NOT chezmoi-applied
+git clone https://github.com/arechste/dotclaude.git   # source-only, NOT chezmoi-applied
+git clone https://github.com/arechste/harness.git
+cd harness
+bash bootstrap/install.sh
 ```
 
-The fresh Claude session has no `~/.claude/` content to inherit. The ADAPTER-PROMPT generates whatever it needs inside `harness/adapters/claude/` (and the corresponding bootstrap-generated `~/.claude/` stubs).
+`install.sh` clones the 5 product repos under `harness/repos/` (gitignored). It is idempotent.
+
+## Step 9 — Wire harness into the host (one-time per workshop)
+
+```bash
+bash bootstrap/setup-host.sh
+```
+
+`setup-host.sh` is idempotent and does three things:
+
+1. **Restores `~/.ssh/id_ed25519.pub`** from `git config --get user.signingkey` if missing — fixes the post-wipe 1P-signing gap.
+2. **Appends a portable `[includeIf]` block** to `~/.gitconfig` so that running git inside `~/airepos/common/harness/` picks up `harness/.gitconfig` automatically. The committed `harness/.gitconfig` sets `commit.gpgsign = false` so the team can commit on feature branches without 1P prompts. Your principal-scope `~/.gitconfig` is unchanged — outside-harness commits still sign normally.
+3. **Probes 1P CLI auth** and reports whether the `harness-team` vault is reachable. If the vault doesn't exist yet, prints a one-liner to create it; if `op` isn't signed in, prints the signin command.
+
+After this, `git commit` from inside harness/ no longer triggers 1P. Commits to other repos (dotfiles, dotclaude, …) still sign per your `~/.gitconfig`.
+
+## Step 10 — Activate harness in Claude Code
+
+```bash
+cd ~/airepos/common/harness
+claude
+# In the first message of the new session, paste the full content of ADAPTER-PROMPT.md
+```
+
+The fresh Claude session has no `~/.claude/` content to inherit. ADAPTER-PROMPT detects Claude Code, generates `harness/CLAUDE.md` (project-scope pointer), 12 subagent shims under `adapters/claude/agents/`, 8 seed skill shims under `adapters/claude/skills/`, and adopts TOWER identity.
 
 **If anything in the old regime turns out to be needed**, that's exactly the test we want — harness should be able to re-establish it inside `harness/adapters/claude/`. Don't restore from the tarball reflexively; investigate first.
 

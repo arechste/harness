@@ -1,0 +1,42 @@
+# harness/.gitconfig — applied automatically inside ~/airepos/common/harness/
+#
+# Wired via [includeIf "gitdir:~/airepos/common/harness/"] in your ~/.gitconfig.
+# `bootstrap/setup-host.sh` adds that includeIf line idempotently.
+#
+# These settings override your principal-scope ~/.gitconfig ONLY when running
+# git from inside harness/. Outside harness, your normal signing/identity
+# regime applies. See Team Knowledge/Guidelines/GL-001-commit-autonomy.md
+# for the policy rationale.
+
+[commit]
+    # Team commits on feature branches are unsigned. The principal signs
+    # the merge commit on main via GitHub's "Squash and merge" (branch
+    # protection on main requires signed commits + reviews).
+    gpgsign = false
+
+[tag]
+    # Same logic for tags — the principal signs releases via gh release create.
+    gpgsign = false
+
+[push]
+    # Always push the current branch to its tracking remote, never main accidentally.
+    default = current
+    # Refuse to push if the remote tip moved since fetch — protects against
+    # auto-pushing over someone else's work.
+    autoSetupRemote = true
+
+[pull]
+    # Fast-forward only — agents must rebase or merge explicitly, never silent merges.
+    ff = only
+
+[fetch]
+    # Prune deleted remote branches automatically so `git branch -r` stays tidy.
+    prune = true
+
+[branch]
+    # Sort branches by most recent commit when listing.
+    sort = -committerdate
+
+[rerere]
+    # Remember conflict resolutions across rebases.
+    enabled = true
