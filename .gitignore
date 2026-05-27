@@ -5,5 +5,11 @@ repos/*/
 .tmp/
 .tmp/persist/
 
+# Claude Code's project-scope state directory.
+# Bootstrap/setup-host.sh creates .claude/{agents,commands}/ as symlinks into
+# adapters/claude/{agents,skills}/ (canonical SSOT). The rest of .claude/
+# (settings, history, sessions) is per-machine session state — never committed.
+.claude/
+
 # OS noise
 .DS_Store

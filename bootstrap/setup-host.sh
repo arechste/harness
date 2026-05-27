@@ -61,7 +61,43 @@ else
   warn "expected commit.gpgsign=false inside harness, got: $inside_signing"
 fi
 
-step "3. 1Password CLI + harness-team vault"
+step "3. Wire .claude/{agents,commands} symlinks for Claude Code discovery"
+# Claude Code discovers subagents in <project>/.claude/agents/ and slash commands in
+# <project>/.claude/commands/. Canonical shims live under adapters/claude/{agents,skills}/
+# (SSOT, host-generic naming). This step symlinks them into .claude/ so Claude Code finds
+# them. Relative symlinks => portable across workshops. .claude/ is gitignored.
+
+mkdir -p "$HARNESS_ROOT/.claude/agents" "$HARNESS_ROOT/.claude/commands"
+
+agent_written=0; agent_skipped=0
+for f in "$HARNESS_ROOT/adapters/claude/agents/"*.md; do
+  [[ -e "$f" ]] || continue
+  name=$(basename "$f")
+  target="$HARNESS_ROOT/.claude/agents/$name"
+  if [[ -L "$target" || -e "$target" ]]; then
+    agent_skipped=$((agent_skipped+1))
+  else
+    ln -s "../../adapters/claude/agents/$name" "$target"
+    agent_written=$((agent_written+1))
+  fi
+done
+ok ".claude/agents/: $agent_written written, $agent_skipped already present"
+
+cmd_written=0; cmd_skipped=0
+for f in "$HARNESS_ROOT/adapters/claude/skills/"*.md; do
+  [[ -e "$f" ]] || continue
+  name=$(basename "$f")
+  target="$HARNESS_ROOT/.claude/commands/$name"
+  if [[ -L "$target" || -e "$target" ]]; then
+    cmd_skipped=$((cmd_skipped+1))
+  else
+    ln -s "../../adapters/claude/skills/$name" "$target"
+    cmd_written=$((cmd_written+1))
+  fi
+done
+ok ".claude/commands/: $cmd_written written, $cmd_skipped already present"
+
+step "4. 1Password CLI + harness-team vault"
 if ! command -v op >/dev/null 2>&1; then
   todo "install 1Password CLI (brew install 1password-cli)"
 else
