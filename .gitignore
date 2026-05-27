@@ -1,0 +1,9 @@
+# Nested independent clones (per R0-Q6)
+repos/*/
+
+# Ephemeral working files
+.tmp/
+.tmp/persist/
+
+# OS noise
+.DS_Store
