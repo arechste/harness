@@ -2,13 +2,13 @@
 
 Personal infra assistant for [@arechste](https://github.com/arechste) — a team of AI agents managing the umbrella of personal infrastructure repos.
 
-**Status:** Round 0 design complete. Phase 0 audit not yet started. See [`docs/transformation/round-0.md`](docs/transformation/round-0.md) for the design plan, and the anchor issue in [`arechste/aitools-common`](https://github.com/arechste/aitools-common/issues) titled *chore(arch): personal-infra-assistant transformation* for live tracking.
+**Status:** Phase 1 scaffolding in progress. Round 0 design + Phase 0 audit committed. Greenfield skeleton (Team/, Team Knowledge/, Principal/, state/, adapters/claude/, bootstrap/, ci/) authored on merktnix; awaits Phase 1 Step 0 (fragtnix clean-slate) before becoming the active workshop. See [`docs/transformation/round-0.md`](docs/transformation/round-0.md), [`docs/transformation/Phase-0-audit.md`](docs/transformation/Phase-0-audit.md), [`docs/transformation/Phase-1-prep-fragtnix-clean-slate.md`](docs/transformation/Phase-1-prep-fragtnix-clean-slate.md). Anchor issue: [`arechste/aitools-common#22`](https://github.com/arechste/aitools-common/issues/22).
 
 ## What this is
 
 A scaffold inspired by [myICOR/myPKA](https://github.com/myICOR/myPKA) — plain markdown SOPs/Guidelines/Workstreams read at runtime by AI agents via `[[wikilinks]]`. Tool-agnostic at the content layer; tool-specific shims (Claude Code, future Cursor/Gemini) live under `adapters/`.
 
-## The team (planned, not yet built)
+## The team (Phase 1 contracts authored as stubs)
 
 | Callsign | Animal | Role |
 |---|---|---|
@@ -28,7 +28,11 @@ A scaffold inspired by [myICOR/myPKA](https://github.com/myICOR/myPKA) — plain
 
 ## Bootstrap
 
-Not yet built. When ready, the bootstrap will be: clone this repo, paste `ADAPTER-PROMPT.md` into any AI tool as message 1.
+1. `git clone https://github.com/arechste/harness.git ~/airepos/common/harness && cd ~/airepos/common/harness`
+2. `bash bootstrap/install.sh` — clones the 5 product repos under `repos/` (gitignored).
+3. Paste `ADAPTER-PROMPT.md` into a fresh AI session opened against this directory.
+
+`ADAPTER-PROMPT.md` is currently a stub — the real ~350-line fork from [myICOR/myPKA](https://github.com/myICOR/myPKA) lands in a Phase 1 follow-up session. Until then, the scaffold is browseable but not runtime-active.
 
 ## Architecture
 

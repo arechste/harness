@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-marketplace-plugin",
+  "name": "harness",
+  "description": "Personal infra assistant — Claude shim layer for the harness orchestrator",
+  "homepage": "https://github.com/arechste/harness",
+  "author": "arechste"
+}

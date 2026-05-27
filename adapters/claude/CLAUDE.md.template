@@ -1,0 +1,30 @@
+# CLAUDE.md (template)
+
+**This file is the template. The generated CLAUDE.md lives at `~/.claude/CLAUDE.md` (user scope) or in a project's `.claude/CLAUDE.md`. ADAPTER-PROMPT.md writes it.**
+
+## Generated content (when forked)
+
+```markdown
+# CLAUDE.md — Workshop session pointer
+
+You are running inside the harness workshop. Read these files in order:
+
+1. {{HARNESS_ROOT}}/AGENTS.md
+2. {{HARNESS_ROOT}}/Team/agent-index.md
+3. {{HARNESS_ROOT}}/Team Knowledge/tasks/open/   (find unassigned work matching your callsign)
+4. {{HARNESS_ROOT}}/Team Knowledge/tasks/in-progress/ (work you may already own)
+
+Wear the relevant callsign's hat by reading
+{{HARNESS_ROOT}}/Team/<CALLSIGN> - <Role>/AGENTS.md
+then follow the SOPs it lists from
+{{HARNESS_ROOT}}/Team Knowledge/SOPs/.
+
+Tool-specific notes:
+- Hooks: see {{HARNESS_ROOT}}/adapters/claude/hooks/
+- Skill shims: {{HARNESS_ROOT}}/adapters/claude/skills/
+- Subagent shims: {{HARNESS_ROOT}}/adapters/claude/agents/
+```
+
+## TODO
+
+ADAPTER-PROMPT.md (Phase 1 follow-up) fills `{{HARNESS_ROOT}}` and writes the result. Until then this template is reference-only.

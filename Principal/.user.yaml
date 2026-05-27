@@ -1,0 +1,14 @@
+name: arechste
+email: arechste@gmail.com
+github: arechste
+
+machines:
+  primary_workshop: fragtnix
+  alternate_workshop: merktnix
+  fleet: [tutnix, machtnix, CR61790DFV]
+
+preferences:
+  tone: terse, no preambles
+  emoji: never
+  shell_discipline: one command per Bash call (no && / || / ;)
+  task_artifacts: GitHub issues for multi-session; harness state/ for ephemeral; Principal/Journal/ for durable insights

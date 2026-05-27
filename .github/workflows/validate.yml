@@ -1,0 +1,51 @@
+name: validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint markdown
+        run: |
+          npx --yes markdownlint-cli '**/*.md' --ignore 'repos/**' --ignore 'node_modules/**' || true
+
+  wikilink-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Detect dead wikilinks (informational)
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Extract every [[link]] target from markdown files, dedupe.
+          mapfile -t links < <(grep -rhoE '\[\[[^]]+\]\]' \
+            --include='*.md' \
+            --exclude-dir=repos \
+            --exclude-dir=node_modules \
+            . | sed -E 's/^\[\[|\]\]$//g' | sort -u)
+          missing=0
+          for link in "${links[@]}"; do
+            # A link resolves if a file with that exact stem exists anywhere in the tree.
+            stem="${link%%|*}"  # strip alias if any
+            if ! find . -path ./repos -prune -o -type f -name "${stem}.md" -print | grep -q .; then
+              echo "warn: dangling [[${stem}]]"
+              missing=$((missing+1))
+            fi
+          done
+          echo "dangling wikilinks: ${missing}"
+          # Phase 1: dangling links expected. Do not fail the job.
+          exit 0
+
+  schema-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Placeholder
+        run: |
+          echo "JSON schema validation not yet wired (no schemas in ci/schemas/ yet)."
+          echo "LATTICE authors schemas in Phase 2."
