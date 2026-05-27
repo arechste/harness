@@ -32,12 +32,12 @@ A scaffold inspired by [myICOR/myPKA](https://github.com/myICOR/myPKA) — plain
 2. `bash bootstrap/install.sh` — clones the 5 product repos under `repos/` (gitignored).
 3. Paste `ADAPTER-PROMPT.md` into a fresh AI session opened against this directory.
 
-`ADAPTER-PROMPT.md` is currently a stub — the real ~350-line fork from [myICOR/myPKA](https://github.com/myICOR/myPKA) lands in a Phase 1 follow-up session. Until then, the scaffold is browseable but not runtime-active.
+`ADAPTER-PROMPT.md` is structurally inspired by [myICOR/myPKA](https://github.com/myICOR/myPKA) (CC BY-NC-SA 4.0) — see [`NOTICE.md`](NOTICE.md). The prose is authored fresh for harness; no upstream text is incorporated.
 
 ## Architecture
 
 The workshop where the team works lives on a single machine at a time (planned primary: fragtnix). Backup via git push to this repo. Outputs land as commits in the 5 product repos (`dotfiles`, `dotclaude`, `git-organizer`, `fleet-organizer`, `aitools-common`) which are distributed to other machines via existing mechanisms (chezmoi, Claude Code plugin marketplace).
 
-## License
+## License & attribution
 
-[MIT](LICENSE)
+[MIT](LICENSE). See [`NOTICE.md`](NOTICE.md) for inspirations and attributions (notably myICOR/myPKA as the upstream pattern reference).
