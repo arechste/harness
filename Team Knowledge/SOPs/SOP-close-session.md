@@ -53,7 +53,30 @@ Don't let session context evaporate. Convert it into:
 
    Don't *do* the graduation yet — propose it by filing a task in `tasks/open/` tagged `required-expertise: writer` (QUILL) or `librarian` (VAULT) with `links: [<session-log-path>]`.
 
-5. **Sign off.** End the session with a one-line acknowledgement to the principal naming the log path. Example: *"Session logged at `Team Knowledge/session-logs/2026-05-27/06-30_phase1-step0.md`. 2 graduation candidates filed. Closing."*
+5. **Commit and push the session log.** Per `[[GL-001-commit-autonomy]]`, harness permits direct-to-`main` push for session-log commits (the log IS the qualifying meta-change). Stage *only* the artifacts close-session itself produced — the new log file, any `INDEX.md` updates from the librarian pass, any new graduation-task files in `tasks/open/`. Do NOT bundle in unrelated uncommitted state from the session; substantive work belongs in its own commit by the agent that did it.
+
+   ```bash
+   HARNESS=~/airepos/common/harness
+   LOG="Team Knowledge/session-logs/$(date +%Y)/$(date +%m)/$(date +%Y-%m-%d-%H-%M)_<topic-slug>.md"
+
+   git -C "$HARNESS" add "$LOG"
+   # If steps 3-4 updated other files (INDEX, new graduation task), stage them too:
+   # git -C "$HARNESS" add "Team Knowledge/INDEX.md" "Team Knowledge/tasks/open/<new-graduation>.md"
+
+   git -C "$HARNESS" commit -F- <<EOF
+   chore(session-log): $(date +%Y-%m-%d\ %H:%M) — <topic-slug>
+
+   <optional one-line summary>
+
+   Co-Authored-By: Claude/Opus/harness@$(hostname -s) <noreply@anthropic.com>
+   EOF
+
+   git -C "$HARNESS" push
+   ```
+
+   Signing is off inside harness (per `harness/.gitconfig`) so this is friction-free. If `git push` fails (network, conflict, branch protection), surface to the principal — do not retry blindly. The log is durable on disk locally; the principal can push later.
+
+6. **Sign off.** End with a one-line acknowledgement to the principal: log path, commit hash, push outcome. Example: *"Session logged at `Team Knowledge/session-logs/2026/05/2026-05-27-09-55_close-session-smoketest.md`, committed as `a1b2c3d`, pushed to main. 0 graduations proposed. Closing."*
 
 ## Worked example
 
@@ -65,3 +88,5 @@ TBD — fill in after first real close-session run on fragtnix.
 - **Auto-graduating mid-session.** Steps 4 *proposes*; the actual graduation is a separate task another agent will pick up. Resist the urge to write the Guideline now.
 - **Cross-linking from the log to itself.** Wikilink to *other* logs, SOPs, and journal entries — not to the file you're writing.
 - **Skipping when the session was short.** Even a 5-minute session that produced a commit deserves a log entry. Future-you will thank present-you.
+- **Bundling unrelated uncommitted changes into the session-log commit.** Step 5 stages only close-session's own artifacts. If `git status` shows other modifications, those belong in a separate commit by whichever agent made them — never silently swept into the session-log commit.
+- **Retrying a failed push silently.** If `git push` fails, the principal must know. The log on disk is the durable record; the push is reconcilable later. Don't loop or fall back to `--force`.
