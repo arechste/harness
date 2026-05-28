@@ -20,5 +20,5 @@ See `state/delegations/open/dotclaude-*.md`.
 
 ## Conventions in force (Phase 2 wiring)
 
-- All `[[GL-NNN-*]]` PORTed from `dotclaude/home/rules/` (7 files)
-- `[[GL-NNN-feedback-*]]` PORTed from `dotclaude/home/memory/feedback_*`
+- All `GL-NNN-*` Guidelines PORTed from `dotclaude/home/rules/` (7 files)
+- `GL-NNN-feedback-*` Guidelines PORTed from `dotclaude/home/memory/feedback_*`

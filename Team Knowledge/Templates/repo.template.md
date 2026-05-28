@@ -15,12 +15,18 @@ One paragraph.
 
 ## Conventions in force
 
-- `[[GL-...]]`
-- `[[GL-...]]`
+Wikilinks to the Guidelines this repo follows, e.g.:
+
+```text
+[[GL-...]]
+[[GL-...]]
+```
 
 ## Active workstream
 
-- `[[WS-NNN-...]]`
+```text
+[[WS-NNN-...]]
+```
 
 ## Notes
 

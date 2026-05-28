@@ -23,13 +23,18 @@ jobs:
         run: |
           set -euo pipefail
           # Extract every [[link]] target from markdown files, dedupe.
-          mapfile -t links < <(grep -rhoE '\[\[[^]]+\]\]' \
-            --include='*.md' \
-            --exclude-dir=repos \
-            --exclude-dir=node_modules \
-            . | sed -E 's/^\[\[|\]\]$//g' | sort -u)
+          # Fenced code blocks (```...```) are stripped first so illustrative
+          # [[...]] examples in templates/SOPs are not counted as dead links.
+          # Inline code spans are NOT stripped — real wikilinks live there.
+          strip_fences() { awk 'BEGIN{f=0} /^[[:space:]]*```/{f=!f; next} !f'; }
+          mapfile -t links < <(
+            find . \( -path ./repos -o -path ./node_modules \) -prune -o -name '*.md' -type f -print \
+            | while IFS= read -r file; do strip_fences < "$file"; done \
+            | grep -oE '\[\[[^]]+\]\]' | sed -E 's/^\[\[|\]\]$//g' | sort -u
+          )
           missing=0
-          for link in "${links[@]}"; do
+          for link in "${links[@]:-}"; do
+            [ -z "$link" ] && continue
             # A link resolves if a file with that exact stem exists anywhere in the tree.
             stem="${link%%|*}"  # strip alias if any
             if ! find . -path ./repos -prune -o -type f -name "${stem}.md" -print | grep -q .; then

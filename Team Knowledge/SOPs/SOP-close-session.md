@@ -21,7 +21,7 @@ Don't let session context evaporate. Convert it into:
 
 - The session itself (conversation context + on-disk state changes)
 - `Team Knowledge/tasks/in-progress/` — what's currently owned by callsigns this session has worn
-- `Team Knowledge/session-logs/YYYY/MM/` — recent prior logs (for `[[wikilink]]` cross-reference)
+- `Team Knowledge/session-logs/YYYY/MM/` — recent prior logs (for wikilink cross-reference)
 - `Principal/Journal/` — for graduation candidates (durable insights move here)
 
 ## Steps
@@ -42,7 +42,7 @@ Don't let session context evaporate. Convert it into:
    - **Wikilinks:** to prior session logs on the same thread, relevant SOPs, the principal's journal entries you created
 
 3. **Librarian pass (VAULT hat).** Quick scan:
-   - Any `[[wikilink]]` you used that doesn't resolve to a real file? Note it in `notes` or open a small `Team Knowledge/tasks/open/` task tagged `required-expertise: vault`.
+   - Any wikilink you used that doesn't resolve to a real file? Note it in `notes` or open a small `Team Knowledge/tasks/open/` task tagged `required-expertise: vault`.
    - Any new file you created without an INDEX entry? Add the entry.
    - Any SSOT drift (same fact written in two places)? Flag for cleanup or fix in place if trivial.
 

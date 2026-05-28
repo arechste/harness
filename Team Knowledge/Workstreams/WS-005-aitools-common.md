@@ -15,7 +15,13 @@ See `state/delegations/open/aitools-common-*.md`.
 ## Phase notes
 
 - Phase 2: PORT 10 skill bodies (SPLIT into `Team Knowledge/SOPs/` + `adapters/claude/commands/<skill>.md` shims), 4 hook scripts (verbatim to `adapters/claude/hooks/`), shared fragments to Guidelines.
-- Phase 3: rewrite all 10 skill bodies in this repo as thin pointers — `body = "Read [[SOP-XXX]] and follow it."` Hooks migrate; plugin manifest stays.
+- Phase 3: rewrite all 10 skill bodies in this repo as thin pointers — each body is just a wikilink to its SOP:
+
+  ```text
+  body = "Read [[SOP-XXX]] and follow it."
+  ```
+
+  Hooks migrate; plugin manifest stays.
 - Phase 5a: slim — plugin wrapper only.
 
 ## Conventions in force (Phase 2 wiring)

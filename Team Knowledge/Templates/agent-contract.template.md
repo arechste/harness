@@ -20,7 +20,11 @@ One paragraph: what role this callsign plays, how it relates to adjacent callsig
 
 ## SOPs I follow
 
-`[[SOP-...]]`, `[[SOP-...]]` (list 2-5; dangling links OK in stubs).
+List 2-5 SOP wikilinks (dangling links OK in stubs):
+
+```text
+[[SOP-...]], [[SOP-...]]
+```
 
 ## Escalate to
 

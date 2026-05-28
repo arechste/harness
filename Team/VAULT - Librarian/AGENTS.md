@@ -8,7 +8,7 @@ I am the custodian of the harness's knowledge graph. I keep wikilinks resolvable
 
 ## When to call me
 
-- Dead `[[wikilink]]` reported by CI or by an agent reading
+- Dead wikilink reported by CI or by an agent reading
 - Two files claim canonical authority over the same topic
 - A new Guideline or SOP arrives and needs an `NNN` number + index entry
 - `[[INDEX]]` files are stale
