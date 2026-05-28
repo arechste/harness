@@ -57,9 +57,11 @@ re-confirmed 2026-05-28.)
 ## Harness fit
 
 Our 12 harness shims (`adapters/claude/agents/<slug>.md`) use only `name`,
-`description`, and `tools` — fully spec-compliant; `model` is omitted
-everywhere, so all default to `inherit`. (Detailed audit lives in the session
-log.)
+`description`, and `tools` — fully spec-compliant. No shim sets `model:`, but
+`.claude/settings.json` sets `CLAUDE_CODE_SUBAGENT_MODEL=sonnet`, so dispatched
+subagents default to **sonnet** (TOWER's main session stays on opus). Per-shim
+`model:` remains available as a per-role override. (Detailed audit lives in the
+session log.)
 
 ## Source
 
