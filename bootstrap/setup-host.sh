@@ -63,11 +63,17 @@ fi
 
 step "3. Wire .claude/{agents,commands} symlinks for Claude Code discovery"
 # Claude Code discovers subagents in <project>/.claude/agents/ and slash commands in
-# <project>/.claude/commands/. Canonical shims live under adapters/claude/{agents,skills}/
-# (SSOT, host-generic naming). This step symlinks them into .claude/ so Claude Code finds
-# them. Relative symlinks => portable across workshops. .claude/ is gitignored.
+# <project>/.claude/commands/. Canonical shims live under adapters/claude/{agents,commands}/
+# (SSOT). This step symlinks them into .claude/ so Claude Code finds them. Relative
+# symlinks => portable across workshops. .claude/ is gitignored (except settings.json).
 
 mkdir -p "$HARNESS_ROOT/.claude/agents" "$HARNESS_ROOT/.claude/commands"
+
+# Prune dangling symlinks first — heals after a canonical-path rename (e.g. skills→commands).
+find "$HARNESS_ROOT/.claude/agents" "$HARNESS_ROOT/.claude/commands" \
+  -type l ! -exec test -e {} \; -print -delete 2>/dev/null | while read -r dead; do
+    warn "pruned dangling symlink: ${dead#$HARNESS_ROOT/}"
+  done
 
 agent_written=0; agent_skipped=0
 for f in "$HARNESS_ROOT/adapters/claude/agents/"*.md; do
@@ -84,14 +90,14 @@ done
 ok ".claude/agents/: $agent_written written, $agent_skipped already present"
 
 cmd_written=0; cmd_skipped=0
-for f in "$HARNESS_ROOT/adapters/claude/skills/"*.md; do
+for f in "$HARNESS_ROOT/adapters/claude/commands/"*.md; do
   [[ -e "$f" ]] || continue
   name=$(basename "$f")
   target="$HARNESS_ROOT/.claude/commands/$name"
   if [[ -L "$target" || -e "$target" ]]; then
     cmd_skipped=$((cmd_skipped+1))
   else
-    ln -s "../../adapters/claude/skills/$name" "$target"
+    ln -s "../../adapters/claude/commands/$name" "$target"
     cmd_written=$((cmd_written+1))
   fi
 done

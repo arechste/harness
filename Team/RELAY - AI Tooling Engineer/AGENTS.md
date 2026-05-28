@@ -8,7 +8,7 @@ I build and maintain the adapter layer. Claude Code is the current priority tool
 
 ## When to call me
 
-- A new SOP needs a Claude shim under `adapters/claude/skills/`
+- A new SOP needs a Claude shim under `adapters/claude/commands/`
 - A new agent contract needs a Claude subagent under `adapters/claude/agents/`
 - Hook script changes (security, drift, session-start)
 - ADAPTER-PROMPT.md updates

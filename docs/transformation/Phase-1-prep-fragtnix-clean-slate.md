@@ -165,7 +165,7 @@ claude
 # In the first message of the new session, paste the full content of ADAPTER-PROMPT.md
 ```
 
-The fresh Claude session has no `~/.claude/` content to inherit. ADAPTER-PROMPT detects Claude Code, generates `harness/CLAUDE.md` (project-scope pointer), 12 subagent shims under `adapters/claude/agents/`, 8 seed skill shims under `adapters/claude/skills/`, and adopts TOWER identity.
+The fresh Claude session has no `~/.claude/` content to inherit. ADAPTER-PROMPT detects Claude Code, generates `harness/CLAUDE.md` (project-scope pointer), 12 subagent shims under `adapters/claude/agents/`, 8 seed command shims under `adapters/claude/commands/`, and adopts TOWER identity.
 
 **If anything in the old regime turns out to be needed**, that's exactly the test we want — harness should be able to re-establish it inside `harness/adapters/claude/`. Don't restore from the tarball reflexively; investigate first.
 

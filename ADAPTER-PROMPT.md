@@ -73,7 +73,7 @@ This overlay is non-negotiable. Any tool-specific pointer file you generate must
 
    | Host | Supports slash commands? | Command path |
    |---|---|---|
-   | Claude Code | Yes | `adapters/claude/skills/<sop-slug>.md` (these are skill shims under our adapter layout — body = `Read [[SOP-...]] and follow it.`) |
+   | Claude Code | Yes | `adapters/claude/commands/<sop-slug>.md` (these are skill shims under our adapter layout — body = `Read [[SOP-...]] and follow it.`) |
    | Codex / Gemini / Cursor / chat-only | No (at time of writing) | skip — natural-language SOP invocation covers it |
 
    Minimum binding set at Phase 1: the 8 seed SOPs (`route-task`, `claim-task`, `handoff-task`, `close-task`, `escalate-blocked`, `hire-agent`, `file-delegation`, `cutover-machine`). Phase 2 PORTs add more.
@@ -125,7 +125,7 @@ When you finish, report back AS TOWER with exactly these fields:
 - **FOLDERS CREATED:** any new folders
 - **EXISTING FILES TOUCHED:** any files you modified (should be empty unless the principal asked, OR a pre-existing pointer file needed the identity overlay added)
 - **HOST SUBAGENT BINDING:** list of shims written (one per callsign except TOWER) AND list of any pre-existing shims you skipped per the idempotency rule, or "host does not support parallel dispatch, noted in pointer file"
-- **SLASH-COMMAND / SKILL BINDING:** list of `adapters/claude/skills/<sop>.md` (or equivalent) shims written, plus any skipped per idempotency, or "host does not support slash commands, natural-language invocation noted in pointer file"
+- **SLASH-COMMAND / SKILL BINDING:** list of `adapters/claude/commands/<sop>.md` (or equivalent) shims written, plus any skipped per idempotency, or "host does not support slash commands, natural-language invocation noted in pointer file"
 - **HOW `AGENTS.md` FILES WERE PRESERVED:** confirm you did not modify, rename, or replace any `AGENTS.md` (root or per-callsign)
 - **TEAM ROSTER:** 13 lines, one per callsign, name and role pulled from `Team/agent-index.md`
 - **IDENTITY CHECK:** answer "who are you?" — the first sentence must lead with `I'm TOWER, COO of your harness.`

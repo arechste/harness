@@ -96,7 +96,7 @@ Workstreams (initial): WS-001-dotfiles, WS-002-dotclaude, WS-003-fleet, WS-004-g
 | `dotclaude/home/rules/<topic>.md` | Universal rules | `harness/Team Knowledge/Guidelines/GL-NNN-<topic>.md` | One GL per rule |
 | `dotclaude/home/memory/feedback_*.md` | Feedback | `harness/Team Knowledge/Guidelines/GL-NNN-feedback-<topic>.md` | Operationalized as Guidelines |
 | `dotclaude/home/memory/source_*.md` | References | `harness/Principal/Reference/<topic>.md` | Principal-owned |
-| `dotclaude/home/skills/<skill>/SKILL.md` (U-tier) | Universal skills | Split: body → `harness/Team Knowledge/SOPs/SOP-...md`; Claude shim → `harness/adapters/claude/skills/<skill>.md` | Audit determines split |
+| `dotclaude/home/skills/<skill>/SKILL.md` (U-tier) | Universal skills | Split: body → `harness/Team Knowledge/SOPs/SOP-...md`; Claude shim → `harness/adapters/claude/commands/<skill>.md` | Audit determines split |
 | `aitools-common/skills/<skill>/SKILL.md` (F-tier) | Fleet skills | Same split as above | |
 | `aitools-common/skills/shared/<frag>.md` | Shared fragments | Per type: SOPs/ or Guidelines/ | delegation-protocol → SOPs; label-taxonomy → GL; test-framework-detection → GL |
 | `aitools-common/hooks/<hook>.sh` | Runtime enforcement | `harness/adapters/claude/hooks/<hook>.sh` | Verbatim |

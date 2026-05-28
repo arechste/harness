@@ -16,7 +16,7 @@
 - **DROP** — obsolete, duplicate, ephemeral, or replaced by ADAPTER-PROMPT output.
 - **REPO-LOCAL** — stays in source repo as repo infrastructure (LICENSE, README, CHANGELOG, CI, contributor templates) or repo-specific tooling.
 
-Skill bodies are **split**: SOP body → `harness/Team Knowledge/SOPs/SOP-…`; Claude shim → `harness/adapters/claude/skills/<skill>.md`. Hooks are **dual**: file lives in `harness/adapters/claude/hooks/` (PORT), runtime registration stays in source repo (KEEP-CLAUDE).
+Skill bodies are **split**: SOP body → `harness/Team Knowledge/SOPs/SOP-…`; Claude shim → `harness/adapters/claude/commands/<skill>.md`. Hooks are **dual**: file lives in `harness/adapters/claude/hooks/` (PORT), runtime registration stays in source repo (KEEP-CLAUDE).
 
 ## Repo-by-repo totals
 
@@ -64,16 +64,16 @@ Source: `~/airepos/common/aitools-common/`. Future rename → `aitools-claude` p
 | `hooks/session-start-deferred-claude-ai-drift.sh` | PORT (verbatim) | `harness/adapters/claude/hooks/` | Same |
 | `hooks/session-start-deferred-fleet.sh` | PORT (verbatim) | `harness/adapters/claude/hooks/` | Same |
 | **skills/** (all F-tier — split body + shim) | | | |
-| `skills/audit/SKILL.md` | PORT (split) | body → `SOPs/SOP-audit-conventions.md`; shim → `adapters/claude/skills/audit.md` | |
-| `skills/batch/SKILL.md` | PORT (split) | body → `SOPs/SOP-batch-issues.md`; shim → `adapters/claude/skills/batch.md` | |
-| `skills/delegate/SKILL.md` | PORT (split) | body → `SOPs/SOP-file-delegation.md`; shim → `adapters/claude/skills/delegate.md` | Maps to Phase 1 seed SOP |
-| `skills/delegation-respond/SKILL.md` | PORT (split) | body → `SOPs/SOP-respond-delegation.md`; shim → `adapters/claude/skills/delegation-respond.md` | |
-| `skills/health/SKILL.md` (+ references/config-checks.md, references/repo-checks.md) | PORT (split + appendices) | body → `SOPs/SOP-check-health.md`; references → SOP appendices or `Guidelines/GL-NNN-health-*.md`; shim → `adapters/claude/skills/health.md` | |
-| `skills/ship/SKILL.md` | PORT (split) | body → `SOPs/SOP-ship-release.md`; shim → `adapters/claude/skills/ship.md` | |
-| `skills/suggest/SKILL.md` | PORT (split) | body → `SOPs/SOP-suggest-tooling.md`; shim → `adapters/claude/skills/suggest.md` | |
-| `skills/sync-conventions/SKILL.md` | PORT (split) | body → `SOPs/SOP-sync-conventions.md`; shim → `adapters/claude/skills/sync-conventions.md` | |
-| `skills/triage/SKILL.md` | PORT (split) | body → `SOPs/SOP-triage-issues.md`; shim → `adapters/claude/skills/triage.md` | |
-| `skills/work/SKILL.md` | PORT (split) | body → `SOPs/SOP-work-issue.md`; shim → `adapters/claude/skills/work.md` | |
+| `skills/audit/SKILL.md` | PORT (split) | body → `SOPs/SOP-audit-conventions.md`; shim → `adapters/claude/commands/audit.md` | |
+| `skills/batch/SKILL.md` | PORT (split) | body → `SOPs/SOP-batch-issues.md`; shim → `adapters/claude/commands/batch.md` | |
+| `skills/delegate/SKILL.md` | PORT (split) | body → `SOPs/SOP-file-delegation.md`; shim → `adapters/claude/commands/delegate.md` | Maps to Phase 1 seed SOP |
+| `skills/delegation-respond/SKILL.md` | PORT (split) | body → `SOPs/SOP-respond-delegation.md`; shim → `adapters/claude/commands/delegation-respond.md` | |
+| `skills/health/SKILL.md` (+ references/config-checks.md, references/repo-checks.md) | PORT (split + appendices) | body → `SOPs/SOP-check-health.md`; references → SOP appendices or `Guidelines/GL-NNN-health-*.md`; shim → `adapters/claude/commands/health.md` | |
+| `skills/ship/SKILL.md` | PORT (split) | body → `SOPs/SOP-ship-release.md`; shim → `adapters/claude/commands/ship.md` | |
+| `skills/suggest/SKILL.md` | PORT (split) | body → `SOPs/SOP-suggest-tooling.md`; shim → `adapters/claude/commands/suggest.md` | |
+| `skills/sync-conventions/SKILL.md` | PORT (split) | body → `SOPs/SOP-sync-conventions.md`; shim → `adapters/claude/commands/sync-conventions.md` | |
+| `skills/triage/SKILL.md` | PORT (split) | body → `SOPs/SOP-triage-issues.md`; shim → `adapters/claude/commands/triage.md` | |
+| `skills/work/SKILL.md` | PORT (split) | body → `SOPs/SOP-work-issue.md`; shim → `adapters/claude/commands/work.md` | |
 | **skills/shared/** (per R0 taxonomy explicit mapping) | | | |
 | `skills/shared/delegation-protocol.md` | PORT | `harness/Team Knowledge/SOPs/SOP-file-delegation.md` (merge/include) | Taxonomy: delegation-protocol → SOPs |
 | `skills/shared/label-taxonomy.md` | PORT | `harness/Team Knowledge/Guidelines/GL-NNN-label-taxonomy.md` | Taxonomy: → GL |
@@ -99,7 +99,7 @@ Source: `~/airepos/common/dotclaude/`. Post-Phase-5a target: ~500 lines (chezmoi
 **`home/memory/source_*.md`** — all 9 PORT to `harness/Principal/Reference/<topic>.md`:
 `source_agent_patterns.md`, `source_claude_code_features.md`, `source_claude_code_permissions.md`, `source_claude_models.md`, `source_compaction_api.md`, `source_folder_trust.md`, `source_official_docs.md`, `source_settings_permissions.md`, `source_surfaces.md`.
 
-**`home/skills/<skill>/SKILL.md`** — all 9 U-tier PORT (split: body → SOPs/, shim → adapters/claude/skills/):
+**`home/skills/<skill>/SKILL.md`** — all 9 U-tier PORT (split: body → SOPs/, shim → adapters/claude/commands/):
 `ci-check`, `commit`, `explain`, `gh-workflow`, `recover`, `research`, `review`, `test-gen`, `test-run`.
 
 **`.claude/skills/<skill>/SKILL.md`** — 7 project-scope skills, all PORT (split):

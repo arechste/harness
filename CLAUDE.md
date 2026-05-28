@@ -25,6 +25,6 @@ Behavior, routing, taxonomy, and naming rules all live in `/Users/arechste/airep
 
 Callsigns are bound as host subagents under `/Users/arechste/airepos/common/harness/adapters/claude/agents/<slug>.md`. Dispatch via Claude Code's `Agent` tool with `subagent_type: <slug>`. Multiple callsigns can run in parallel when dispatched from a single message.
 
-SOPs are bound as skill shims under `/Users/arechste/airepos/common/harness/adapters/claude/skills/<sop-slug>.md`; each shim points at its canonical SOP under `Team Knowledge/SOPs/`.
+SOPs are bound as command shims under `/Users/arechste/airepos/common/harness/adapters/claude/commands/<sop-slug>.md`; each shim points at its canonical SOP under `Team Knowledge/SOPs/`. (Discovered by Claude Code via the `.claude/commands/` symlinks that `bootstrap/setup-host.sh` wires.)
 
 Principal preferences (from `Principal/.user.yaml`): terse tone, no preambles, no emoji, one command per Bash call (no `&&` / `||` / `;`).

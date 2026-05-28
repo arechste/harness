@@ -10,7 +10,7 @@ When a task or invocation arrives, this file (together with `[[agent-index]]`) d
 
 1. **Required expertise** — primary axis. Task frontmatter `required-expertise: [tag, tag]`. Mapped via `[[agent-index]]`.
 2. **Workstream** — if the task is part of an active workstream, prefer the workstream's primary agents (see agent-index § "Workstream → agents").
-3. **Slash command (Claude Code only)** — `/dc:<name>` invocations route through `adapters/claude/skills/<name>.md` shims, which point at SOPs.
+3. **Slash command (Claude Code only)** — `/dc:<name>` invocations route through `adapters/claude/commands/<name>.md` shims, which point at SOPs.
 
 ## Sources to merge in Phase 2
 
