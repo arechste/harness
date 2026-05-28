@@ -73,7 +73,7 @@ This overlay is non-negotiable. Any tool-specific pointer file you generate must
 
    | Host | Supports slash commands? | Command path |
    |---|---|---|
-   | Claude Code | Yes | `adapters/claude/commands/<sop-slug>.md` (these are skill shims under our adapter layout — body = `Read [[SOP-...]] and follow it.`) |
+   | Claude Code | Yes | `adapters/claude/commands/<sop-slug>.md` (these are skill shims under our adapter layout — body = `Read Team Knowledge/SOPs/<sop-slug>.md and follow it.`) |
    | Codex / Gemini / Cursor / chat-only | No (at time of writing) | skip — natural-language SOP invocation covers it |
 
    Minimum binding set at Phase 1: the 8 seed SOPs (`route-task`, `claim-task`, `handoff-task`, `close-task`, `escalate-blocked`, `hire-agent`, `file-delegation`, `cutover-machine`). Phase 2 PORTs add more.

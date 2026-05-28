@@ -54,7 +54,7 @@
 | Bootstrap | `ADAPTER-PROMPT.md` (~350 lines, tool-agnostic prose). Pasted as message 1 into any AI tool. Tool-detection branches on Claude/Cursor/Gemini/ChatGPT/Codex. Idempotent. |
 | Identity | Root `AGENTS.md` mandates: "you are now the orchestrator." Single primary identity. Specialists are "hats" the same model wears by reading the specialist's contract. |
 | Agent contracts | `Team/<Name>/AGENTS.md`, 80-200 lines plain prose, no frontmatter. Operating procedures, not personality narrative. |
-| SOPs | `Team Knowledge/SOPs/SOP-<verb>-<noun>.md`. Invoked by `[[wikilink]]`. Structure: header metadata, Purpose, When to call, Inputs, Steps, Worked example, Common mistakes. |
+| SOPs | `Team Knowledge/SOPs/SOP-<verb>-<noun>.md`. Invoked by wikilink. Structure: header metadata, Purpose, When to call, Inputs, Steps, Worked example, Common mistakes. |
 | Guidelines + Workstreams | `GL-NNN-<topic>.md` for static reference, `WS-NNN-<flow>.md` for multi-agent compositions. Same wikilink invocation. |
 | Tasks | Rich frontmatter (`id`, `assignee`, `priority`, `status`, `linked_sops[]`, `linked_journal_entries[]`, ...). Lifecycle = folder moves. Task = "resumption point". |
 | Journals | Durable insights only. `status: durable | superseded`. Superseded kept and linked, never deleted. |
@@ -235,7 +235,7 @@ After clean-slate confirmation, proceed to Phase 1 Step 1: clone arechste/harnes
 Write PORT content into harness from Phase 0 audit. WS-001 through WS-005 workstream files. Memory migration to Principal/. Migrate 184 tracker entries to harness/state/delegations/. **Existing repos still untouched** — harness is being filled, not the others emptied.
 
 ### Phase 3 — Claude adapter (~1-2 sessions)
-harness/adapters/claude/ populated. aitools-common skills rewritten as thin pointers to harness SOPs (skill body = "Read [[SOP-XXX]] and follow it"). Hooks migrate. Plugin manifest reviewed. **aitools-common touches only.**
+harness/adapters/claude/ populated. aitools-common skills rewritten as thin pointers to harness SOPs (skill body = "Read SOP-XXX and follow it"). Hooks migrate. Plugin manifest reviewed. **aitools-common touches only.**
 
 ### Phase 4 — Validate end-to-end on fragtnix (~1-2 sessions)
 Run real delegations through harness on fragtnix. Iterate on SOPs/contracts until smooth. ADR 030 written. **If anything breaks, only harness changes — existing repos still authoritative.**
