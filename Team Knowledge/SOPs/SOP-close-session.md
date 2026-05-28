@@ -78,9 +78,17 @@ Don't let session context evaporate. Convert it into:
 
 6. **Sign off.** End with a one-line acknowledgement to the principal: log path, commit hash, push outcome. Example: *"Session logged at `Team Knowledge/session-logs/2026/05/2026-05-27-09-55_close-session-smoketest.md`, committed as `a1b2c3d`, pushed to main. 0 graduations proposed. Closing."*
 
+## Backfill policy
+
+Past sessions that produced commits but no log (e.g. the Phase 1 scaffold sessions that predated this SOP) do **not** require retroactive logs. Backfill is **optional and best-effort** — worth it only when a past session made non-obvious decisions a future reader would otherwise have to reverse-engineer from git history. The commit messages plus going-forward discipline are the durable trail; don't manufacture logs for routine past work.
+
+If you *do* backfill, date the log file to the original session's date and add `backfilled: <today's date>` to the frontmatter so it's clear the log was written after the fact.
+
+One thing that is **not** backfill, and that you should always do: if `git status` shows an earlier session's log sitting uncommitted (it was written but never committed — e.g. by a close-session run that predated step 5), sweep it into the current commit. That's reconciliation of a dangling artifact, not retroactive authorship. (This is exactly what happened on the first real fragtnix run — the 09:55 smoketest log was committed by the next day's close-session.)
+
 ## Worked example
 
-TBD — fill in after first real close-session run on fragtnix.
+First real run (fragtnix, 2026-05-28): `/close-session` on a fresh harness. Sweep found empty `tasks/` queues. Wrote `session-logs/2026/05/2026-05-28-07-39_orphan-log-backfill.md`, swept in the uncommitted prior `2026-05-27-09-55` smoketest log, committed both as `6fe45ea` (unsigned, per `[[GL-001-commit-autonomy]]`), pushed to main. 0 graduations (single occurrence of each insight). Signed off naming the log path + commit hash.
 
 ## Common mistakes
 
