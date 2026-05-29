@@ -5,6 +5,7 @@ This is the principal's (user's) space. Agents read it to understand *who they s
 ## Contents
 
 - `.user.yaml` — minimal identity + machine roles
+- `autonomy-contract.md` — the living, written agreement of what the team may do on the principal's behalf without per-instance approval; grows via propose→approve
 - `About-me.md` — principal background, role, interests, working style
 - `Goals.md` — what we're trying to achieve with this whole regime
 - `Machines/<host>.md` — per-machine principal-facing notes (NOT the inventory; inventory lives under `state/inventory/`)
