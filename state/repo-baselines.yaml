@@ -1,0 +1,43 @@
+# repo-baselines.yaml — Phase-2 freeze baseline (read-only)
+#
+# The 5 product repos are UNTOUCHED until Phase 5a. This file records the SHA
+# each repo was frozen at, so any ingested item can cite the exact source state
+# and the products can be reconstructed without writing anything to them.
+#
+# No tags are written to the products: a tag is a write that breaks the freeze
+# and could trip CI/release hooks. SHA alone reconstructs state. Tags become
+# load-bearing only at the Phase-5a carve boundary.
+#
+# Refs: docs/transformation/Phase-0-audit.md (the PORT worklist),
+#       Team Knowledge/tasks/open/phase2-kickoff-decisions.md
+#
+# Per-task advance tracking (the "pinned-plus-advance" epoch history) is NOT
+# encoded yet — that awaits decision 7 in phase2-kickoff-decisions. For now this
+# is a single atomic snapshot at the initial freeze.
+
+schema_version: 1
+epoch: initial-freeze   # initial-freeze | phase2-port-batch | phase5a-carve | resume-after-freeze
+recorded_at: 2026-05-29
+recorded_by: TOWER
+
+repos:
+  aitools-common:
+    origin: https://github.com/arechste/aitools-common.git
+    branch: main
+    baseline_sha: f2269de961e6cb91125c2a84a4c57c24e27602b1
+  dotclaude:
+    origin: https://github.com/arechste/dotclaude.git
+    branch: main
+    baseline_sha: 4a014776063b4349f78bad21516b256c08f9a5b5
+  dotfiles:
+    origin: https://github.com/arechste/dotfiles.git
+    branch: main
+    baseline_sha: 51a8ae4e6913aaa7246bd89de57821ae51950640
+  git-organizer:
+    origin: https://github.com/arechste/git-organizer.git
+    branch: main
+    baseline_sha: fd629dc1a4751f242895f2f8e1f709f911ac970d
+  mac-organizer:
+    origin: https://github.com/arechste/mac-organizer.git
+    branch: main
+    baseline_sha: 180fe28e27b30f30bd923c3fe161ed70e2e10131

@@ -32,10 +32,16 @@ Phase 2 (build-then-carve: products UNTOUCHED until Phase 5a) is ready to start,
 7. Pinned-plus-advance vs always-pull-latest for the `repos/` clones (CASCADE recommends pinned-plus-advance).
 8. **Secrets / credential-autonomy sequencing** — the one genuinely-new design item (R0 never covered it; GL-002 + the ported credential ADRs are raw material). TOWER's lean: tackle right after baseline + first ingest cluster, since approval-friction throttles everything else.
 
+## Principal decisions (2026-05-29)
+
+1. **Baseline:** APPROVED — write `state/repo-baselines.yaml`. (Done this session.)
+2. **Ingest-with-review:** APPROVED, reshape-as-we-go — start with the per-item verdict + provenance loop; expect to adjust taxonomy / review depth after batch-1.
+3. **Landing cadence:** direct-to-main, **conditioned on granular commits**. Principal's requirement: must be able to revert changes and verify they work as we evolve. TOWER ruling: **one verdict = one atomic conventional commit** (clean `git revert` per item); CI-green + review-before-commit is the gate; feature-branch+PR reserved for genuinely risky/large work (184-issue triage, Phase-5a carve). Products always stay PR.
+
 ## Acceptance criteria
 
-- [ ] Decisions 1–3 answered; first action (baseline record) taken or consciously deferred
-- [ ] Ingest-with-review process ratified (possibly amended)
+- [x] Decisions 1–3 answered; first action (baseline record) taken — `state/repo-baselines.yaml` written 2026-05-29
+- [x] Ingest-with-review process ratified (approved, reshape-as-we-go)
 - [ ] Deferred items 4–8 each have an owning task or a scheduled point
 
 ## Notes
@@ -47,3 +53,4 @@ Phase 2 (build-then-carve: products UNTOUCHED until Phase 5a) is ready to start,
 ## Event log
 
 - 2026-05-29T00:40:00Z — filed by TOWER at session close as the Phase-2 resume point
+- 2026-05-29 — principal answered decisions 1–3 (1: approve baseline; 2: approve ingest-with-review, reshape-as-we-go; 3: direct-to-main with granular atomic commits). TOWER wrote `state/repo-baselines.yaml` (SHAs re-verified, unchanged). Deferred items 4–8 still open.
