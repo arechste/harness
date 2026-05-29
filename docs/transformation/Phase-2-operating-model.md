@@ -9,6 +9,12 @@ dotclaude's `home/rules/`, `home/memory/`, `.claude/rules/`. It **supersedes the
 current system is built*, then propose *how harness will work* and *what to remove / change /
 delete in the repos* — with **minimal disruption** during ramp-up. Trust precedes execution.
 
+**Ratified (2026-05-29):**
+- §3d **delegation reorg APPROVED** — harness task/delegation system becomes the coordination plane;
+  GitHub issues become the external mirror only when work lands in a product repo.
+- §6 Q5 **pilot domain = dotclaude** (AI runtime / `~/.claude`). The team runs the
+  intent-mine → goals-interview → agnostic-author loop here first as the reference implementation.
+
 ---
 
 ## 1. How it works today (as-is)
