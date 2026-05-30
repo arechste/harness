@@ -15,6 +15,7 @@ Validation that runs in GitHub Actions. Workflow YAML lives under `.github/workf
 
 - `scripts/check-mermaid.sh` — extracts ```mermaid blocks from every `.md`, validates each via `mmdc -i ... -o /tmp/out.svg`. Run locally with `npm i -g @mermaid-js/mermaid-cli && bash ci/scripts/check-mermaid.sh`.
 - `scripts/check-doc-freshness.sh` — scans front-matter `last-verified:` dates, reports files older than `${MAX_AGE_DAYS:-180}`. Run locally with `MAX_AGE_DAYS=30 bash ci/scripts/check-doc-freshness.sh`.
+- `scripts/check-credential-expiry.sh` — reads `state/credentials/INVENTORY.yaml` (secret-free metadata) and warns on credentials nearing/past expiry (default T-14d warn, T-7d crit; `unknown` → NEEDS-METADATA). Reads metadata only — no secret access, no browser. Non-blocking unless `--strict`. Run locally with `bash ci/scripts/check-credential-expiry.sh [--warn 14] [--crit 7] [--strict]`.
 
 ## Checks (Phase 2+ — planned)
 
