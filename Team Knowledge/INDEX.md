@@ -2,6 +2,8 @@
 
 Shared, machine-and-agent-agnostic knowledge. Composed of SOPs (verbs), Guidelines (static reference), Workstreams (named flows), Templates (entity scaffolds), and the live `tasks/` / `session-logs/` directories.
 
+> **This is the team's BKM (Best-Known Methods).** It is the durable team operating knowledge — the counterpart to `PKM/`, which is the principal's personal long-term wiki. See `PKM/Handbook/04-pkm-and-bkm.md` for the full PKM/BKM split.
+
 ## SOPs
 
 Seed set (Phase 1):
@@ -15,6 +17,7 @@ Seed set (Phase 1):
 - `[[SOP-hire-agent]]` — SCOUT adds a new callsign
 - `[[SOP-file-delegation]]` — CASCADE files GH issue + local mirror
 - `[[SOP-cutover-machine]]` — RANGER moves a fleet machine to slim regime
+- `[[SOP-process-inbox]]` — TOWER+VAULT file raw intake from `Team Inbox/`
 
 Phase 2 populates the rest from Phase 0 audit PORT items.
 
