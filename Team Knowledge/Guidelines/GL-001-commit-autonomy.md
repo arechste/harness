@@ -1,3 +1,10 @@
+---
+form: reference
+last-verified: 2026-05-30
+owner: principal (policy); CASCADE (operational enforcement)
+status: authoritative
+---
+
 # GL-001 — Commit Autonomy
 
 **Status:** Authoritative. **Owner:** principal (policy); CASCADE (operational enforcement).

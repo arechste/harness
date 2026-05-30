@@ -1,7 +1,7 @@
 ---
 form: reference
 last-verified: 2026-05-30
-owner: QUILL (authoring) · TOWER (librarian-pass) · SENTRY (drift audit)
+owner: QUILL (authoring); TOWER (librarian-pass); SENTRY (drift audit)
 status: authoritative
 ---
 

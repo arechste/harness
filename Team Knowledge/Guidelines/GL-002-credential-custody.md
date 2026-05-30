@@ -1,3 +1,10 @@
+---
+form: reference
+last-verified: 2026-05-30
+owner: SENTRY (audit + policy); FORGE (operational plumbing); principal (vault contents)
+status: authoritative
+---
+
 # GL-002 — Credential Custody
 
 **Status:** Authoritative. **Owner:** SENTRY (audit + policy); FORGE (operational plumbing); principal (vault contents).
