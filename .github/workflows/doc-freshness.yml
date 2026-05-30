@@ -1,0 +1,16 @@
+name: doc-freshness
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'  # weekly Monday 07:00 UTC
+  workflow_dispatch:
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check last-verified freshness
+        env:
+          MAX_AGE_DAYS: '180'
+        run: bash ci/scripts/check-doc-freshness.sh
