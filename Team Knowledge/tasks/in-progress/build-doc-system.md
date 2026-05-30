@@ -48,4 +48,5 @@ Principal's stated preferences: visual > text; code snippets and examples > pros
   - D: `docs/decisions/0001-doc-system.md` (founding ADR in MADR form) + ADR INDEX.
   - E: `GL-004-release-versioning.md` (SemVer 0.y.z + Keep-a-Changelog + release-please + cross-repo pin discipline). Wikilink backlog reconciled (NNN → 004).
   - F: CI workflows (link-check · diagram-parse · doc-freshness) + helper scripts. Freshness smoke-tested locally.
-- **Next:** step G (per-product-repo audit + transform + trim README + enable release-please) — gated on team-shape ratification (still parked).
+- 2026-05-30 — **session-progress.** Team-shape ratified (`2aaae88`: 13 → 10 callsigns; VAULT → TOWER, RANGER → FORGE, BRIDGE → CASCADE; RELAY renamed Adapter Engineer). `Expansions/` scaffolded (`f0f4528`). **First step-G calibration committed:** `GL-005-code-of-conduct` ported from `dotclaude/home/rules/code-of-conduct.md` @ baseline `4a01477` (`76a2cd3`) — one Guideline, one commit, provenance via front matter back to baseline SHA.
+- **Next:** awaiting principal verification of the calibration sample before the remaining dotclaude PORTs (coding-standards, safety, execution, tone-concise) and the harder `workflow.md` decomposition. After dotclaude domain closes, repeat the loop for the other four repos.
