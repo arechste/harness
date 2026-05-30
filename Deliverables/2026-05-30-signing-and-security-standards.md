@@ -60,7 +60,7 @@ Already fixed autonomously this session (hygiene, no decision needed): front-mat
 - **Inventory first:** enumerate existing PATs/tokens and their *current* expiries (the principal already has some long-lived PATs to learn about and track) — produce a tracking surface, no values stored.
 - **Rotation cadence:** default **90 days (quarter), tuneable** — up to 180 for low-blast-radius creds; explore **short-lived/throwaway** derived creds where a session can mint-and-discard.
 - **Automation:** `gh`/`op`/`sops` scripts for expiry reporting and rotation assists, within the no-exposure rule; accurate manual instructions for the irreducibly-human steps.
-- **Break-glass:** emergency-access path when 1Password is unavailable (NIST SSDF PW.7.2) — principal-held offline backup; medium TBD.
+- **Break-glass:** emergency-access path when 1Password is unavailable (NIST SSDF PO.5 — protect dev environments / privileged-access controls) — principal-held offline backup; medium TBD.
 
 **Output:** credential-handling runbook + GL-002 amendments + future `[[SOP-rotate-credential]]`, `[[SOP-break-glass]]`, `[[SOP-audit-credentials]]`.
 
