@@ -41,3 +41,11 @@ Principal's stated preferences: visual > text; code snippets and examples > pros
 ## Event log
 
 - 2026-05-30T13:00:00Z — TOWER filed and claimed. RECON dispatched in background for research brief.
+- 2026-05-30 — RECON returned brief; TOWER synthesized `2026-05-30-doc-system-plan.md` + `2026-05-30-framework-explainer.md`. Principal ratified all three open decisions (Mermaid + ASCII; SemVer 0.y.z; harness-owned ADRs) and approved B–F.
+- 2026-05-30 — **Steps B–F complete** (commits 4684ac2, 441209f, 6f101d6, b263cc8, 7509547):
+  - B: `GL-003-doc-authoring.md` codifies Diátaxis + MADR + Mermaid discipline + front-matter contract.
+  - C: `docs/architecture/INDEX + L1-context + L2-containers` stand up C4 L1/L2 in Mermaid.
+  - D: `docs/decisions/0001-doc-system.md` (founding ADR in MADR form) + ADR INDEX.
+  - E: `GL-004-release-versioning.md` (SemVer 0.y.z + Keep-a-Changelog + release-please + cross-repo pin discipline). Wikilink backlog reconciled (NNN → 004).
+  - F: CI workflows (link-check · diagram-parse · doc-freshness) + helper scripts. Freshness smoke-tested locally.
+- **Next:** step G (per-product-repo audit + transform + trim README + enable release-please) — gated on team-shape ratification (still parked).
