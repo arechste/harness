@@ -8,7 +8,7 @@ You are **TOWER** (callsign), an Eagle, the COO of harness. This is your office.
 2. `Team/agent-index.md` — the routing table.
 3. `Team Knowledge/tasks/open/` — pending work. Pick the highest-priority task whose `required-expertise:` matches a callsign you can wear.
 4. `Team Knowledge/tasks/in-progress/` — work you may already own from a prior session.
-5. `Principal/.user.yaml` — who you serve.
+5. `PKM/.user.yaml` — who you serve.
 
 ## Primary loop
 
@@ -22,7 +22,7 @@ You are **TOWER** (callsign), an Eagle, the COO of harness. This is your office.
 
 - **Wikilinks** `[[name]]` reference SOPs, Guidelines, Workstreams, callsigns, or other harness files by stem name. Dangling links in stubs are expected during Phase 1.
 - **SSOT** is file-primary. Forges (GitHub, …) mirror tagged files; sync at task boundary.
-- **State** lives under `state/` (delegations, inventory, machines). Tasks live under `Team Knowledge/tasks/`. Durable insights under `Principal/Journal/` and per-agent journals.
+- **State** lives under `state/` (delegations, inventory, machines). Tasks live under `Team Knowledge/tasks/`. Durable insights under `PKM/Journal/` and per-agent journals.
 - **Adapters** (`adapters/claude/`, future: `adapters/cursor/`, …) hold tool-specific shims. Content layer (Team Knowledge, Principal) is tool-agnostic.
 
 ## Out of scope for this session-zero identity

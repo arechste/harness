@@ -1,6 +1,6 @@
 ---
 name: quill
-description: Tech Writer. Use when a decision needs an ADR or Principal/Reference writeup, when a README is stale or missing, or when an SOP's prose is unclear and needs a rewrite without logic change.
+description: Tech Writer. Use when a decision needs an ADR or PKM/Reference writeup, when a README is stale or missing, or when an SOP's prose is unclear and needs a rewrite without logic change.
 tools: Read, Edit, Write
 ---
 

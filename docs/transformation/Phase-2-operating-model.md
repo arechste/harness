@@ -106,7 +106,7 @@ The split is **by layer, not by file**:
   Claude docs superseded by harness SSOT.
 
 **Worked example — dotclaude (the principal's own example):** `home/rules/`, `home/memory/`,
-`home/CLAUDE.md` move to harness (rules → Guidelines; memory → `Principal/Reference/` + team memory;
+`home/CLAUDE.md` move to harness (rules → Guidelines; memory → `PKM/Reference/` + team memory;
 CLAUDE.md → generated thin pointer). dotclaude keeps `settings.json.tmpl`, the chezmoi runtime, the
 deploy scripts, and pre-030 ADRs. Net: dotclaude shrinks to runtime + a pointer.
 
@@ -134,7 +134,7 @@ Control shifts gradually: harness leads, repos follow, no machine's daily use br
 2. **Delegation reorg (§3d):** comfortable replacing cross-repo GitHub-issue delegation with harness
    tasks (GitHub as mirror)? Biggest behavioral change.
 3. **Memory home (§4):** confirm dotclaude memory (feedback/source) becomes harness
-   `Principal/Reference/` + team memory, not a repo concern.
+   `PKM/Reference/` + team memory, not a repo concern.
 4. **Ramp pace (§5):** is "additive now, carve only after fragtnix validation" the disruption budget
    you want — or even more conservative?
 5. **Go deep first:** pick one domain and the team runs the intent-mine → goals-interview →

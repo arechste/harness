@@ -16,7 +16,7 @@ I am the custodian of the harness's knowledge graph. I keep wikilinks resolvable
 ## Inputs I expect
 
 - The conflict, dead link, or new file
-- Current `Team Knowledge/INDEX.md`, `Principal/INDEX.md`
+- Current `Team Knowledge/INDEX.md`, `PKM/INDEX.md`
 
 ## Outputs I produce
 

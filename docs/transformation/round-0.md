@@ -2,6 +2,8 @@
 
 **Status:** R0 design complete, R0 close-out executed (this file is the durable home — initial commit of arechste/harness). Phase 0 (audit) begins in a new session.
 
+> **Update (2026-05-30, Phase 2):** R0-Q3 was reversed — the folder is now `PKM/` (not `Principal/`), aligning with myPKA's naming. R0-Q1 wording above reflects the original decision; the historical decision text is preserved with markers. Reason: principal asked to mirror myPKA's `PKM/` + `Team Inbox/` + `Deliverables/` pattern they use elsewhere. See `Deliverables/` for current proposals and `PKM/Handbook/` for principal-facing docs.
+
 **Authored:** 2026-05-26 to 2026-05-27 in a multi-turn plan-mode session run from cwd `~/airepos/common/aitools-common/` on merktnix.
 
 **Companion artifacts:**
@@ -32,10 +34,10 @@
 
 | ID | Decision | Locked value |
 |---|---|---|
-| R0-Q1 | Folder naming | myPKA conventions (Team/, Team Knowledge/SOPs|Guidelines|Workstreams|Templates|tasks/session-logs/, journal/) + Principal/ instead of PKM/ |
+| R0-Q1 | Folder naming | myPKA conventions (Team/, Team Knowledge/SOPs\|Guidelines\|Workstreams\|Templates\|tasks/session-logs/, journal/) + Principal/ instead of PKM/ — *Phase-2 reversal: see update note* |
 | R0-Q1.5 | Agent roster | 13 agents with callsigns + animals: TOWER/Eagle (COO), SCOUT/Wolf (Recruiter), RECON/Fox (Researcher), VAULT/Elephant (Librarian), QUILL/Magpie (Tech Writer), LATTICE/Spider (Schemar), BRIDGE/Octopus (Integrator), SENTRY/Mongoose (Auditor), FORGE/Beaver (DevOps Eng), RANGER/Border Collie (SysAdmin), SPARK/Raccoon (Developer), CASCADE/Salmon (GitOps Eng), RELAY/Chameleon (AI Tooling Eng). Folder pattern `Team/<CALLSIGN> - <Role>/`. Expansion via SCOUT's `SOP-hire-agent`. |
 | R0-Q2 | Bootstrap | Fork myPKA's ADAPTER-PROMPT.md and adapt (~350 lines, tool-agnostic, generates per-tool shims) |
-| R0-Q3 | PKM rename | `Principal/` |
+| R0-Q3 | PKM rename | `Principal/` — *Phase-2 reversal: PKM/ adopted for myPKA consistency; see update note* |
 | R0-Q4 | aitools-common future | Defer rename to `aitools-claude` until post-Phase 5. During Phases 0-3, move Claude-specific harness-bootstrap content into `harness/adapters/claude/`. aitools-common stays as distributable plugin wrapper. |
 | R0-Q5 | Repo name | `harness` → `arechste/harness` at `~/airepos/common/harness/` |
 | R0-Q6 | Repo layout | Hierarchy — orchestrator IS its own git repo; `repos/<name>/` are nested independent clones (NOT submodules); `repos/` in `.gitignore`; bootstrap script populates |
@@ -95,7 +97,7 @@ Workstreams (initial): WS-001-dotfiles, WS-002-dotclaude, WS-003-fleet, WS-004-g
 |---|---|---|---|
 | `dotclaude/home/rules/<topic>.md` | Universal rules | `harness/Team Knowledge/Guidelines/GL-NNN-<topic>.md` | One GL per rule |
 | `dotclaude/home/memory/feedback_*.md` | Feedback | `harness/Team Knowledge/Guidelines/GL-NNN-feedback-<topic>.md` | Operationalized as Guidelines |
-| `dotclaude/home/memory/source_*.md` | References | `harness/Principal/Reference/<topic>.md` | Principal-owned |
+| `dotclaude/home/memory/source_*.md` | References | `harness/PKM/Reference/<topic>.md` | Principal-owned |
 | `dotclaude/home/skills/<skill>/SKILL.md` (U-tier) | Universal skills | Split: body → `harness/Team Knowledge/SOPs/SOP-...md`; Claude shim → `harness/adapters/claude/commands/<skill>.md` | Audit determines split |
 | `aitools-common/skills/<skill>/SKILL.md` (F-tier) | Fleet skills | Same split as above | |
 | `aitools-common/skills/shared/<frag>.md` | Shared fragments | Per type: SOPs/ or Guidelines/ | delegation-protocol → SOPs; label-taxonomy → GL; test-framework-detection → GL |
@@ -164,7 +166,7 @@ Workstreams (initial): WS-001-dotfiles, WS-002-dotclaude, WS-003-fleet, WS-004-g
 │   ├── Templates/                          ← repo.template.md, machine.template.md, plugin.template.md, delegation.template.md, agent-contract.template.md
 │   ├── tasks/                              ← open/, in-progress/, done/<YYYY>/<MM>/, cancelled/<YYYY>/<MM>/
 │   └── session-logs/                       ← one per session, append-only
-├── Principal/
+├── PKM/
 │   ├── INDEX.md
 │   ├── .user.yaml                          ← {{USER_NAME}}, preferences
 │   ├── Machines/<host>.md
@@ -232,7 +234,7 @@ After clean-slate confirmation, proceed to Phase 1 Step 1: clone arechste/harnes
 **Phase 1 Step 1+: Build harness shell.** Folder tree, root AGENTS.md, ADAPTER-PROMPT.md, 13 agent contracts (Team/<callsign>/AGENTS.md), seed SOPs (routing + lifecycle), entity templates, install.sh, CI workflow. Bootstrap validation: paste ADAPTER-PROMPT in Claude, confirm shim generation works. **Existing 5 product repos still untouched.**
 
 ### Phase 2 — Populate harness (~2-4 sessions, bulk of work)
-Write PORT content into harness from Phase 0 audit. WS-001 through WS-005 workstream files. Memory migration to Principal/. Migrate 184 tracker entries to harness/state/delegations/. **Existing repos still untouched** — harness is being filled, not the others emptied.
+Write PORT content into harness from Phase 0 audit. WS-001 through WS-005 workstream files. Memory migration to PKM/. Migrate 184 tracker entries to harness/state/delegations/. **Existing repos still untouched** — harness is being filled, not the others emptied.
 
 ### Phase 3 — Claude adapter (~1-2 sessions)
 harness/adapters/claude/ populated. aitools-common skills rewritten as thin pointers to harness SOPs (skill body = "Read SOP-XXX and follow it"). Hooks migrate. Plugin manifest reviewed. **aitools-common touches only.**
@@ -252,7 +254,7 @@ On `transformation/` branches in each of 5 repos: REMOVE content that ported, AD
 
 - **Conversion taxonomy**: explicit table mapping every source file type to its destination. Above.
 - **Routing mechanics**: 8 routing SOPs named. Above.
-- **Memory migration**: feedback → GL, source → Principal/Reference, user → Principal/.user.yaml. Above.
+- **Memory migration**: feedback → GL, source → PKM/Reference, user → PKM/.user.yaml. Above.
 - **ADR migration boundary**: pre-Round-0 ADRs stay in dotclaude; ADR 030+ live in harness. Above.
 - **Per-machine state**: `SOP-cutover-machine` standardizes. Above.
 - **GitHub label drift**: audit covers it; Phase 3 ensures uniform label set across all 5 repos.

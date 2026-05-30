@@ -2,7 +2,7 @@
 
 Personal infra assistant for [@arechste](https://github.com/arechste) — a team of AI agents managing the umbrella of personal infrastructure repos.
 
-**Status:** Phase 1 scaffolding in progress. Round 0 design + Phase 0 audit committed. Greenfield skeleton (Team/, Team Knowledge/, Principal/, state/, adapters/claude/, bootstrap/, ci/) authored on merktnix; awaits Phase 1 Step 0 (fragtnix clean-slate) before becoming the active workshop. See [`docs/transformation/round-0.md`](docs/transformation/round-0.md), [`docs/transformation/Phase-0-audit.md`](docs/transformation/Phase-0-audit.md), [`docs/transformation/Phase-1-prep-fragtnix-clean-slate.md`](docs/transformation/Phase-1-prep-fragtnix-clean-slate.md). Anchor issue: [`arechste/aitools-common#22`](https://github.com/arechste/aitools-common/issues/22).
+**Status:** Phase 1 scaffolding in progress. Round 0 design + Phase 0 audit committed. Greenfield skeleton (Team/, Team Knowledge/, PKM/, state/, adapters/claude/, bootstrap/, ci/) authored on merktnix; awaits Phase 1 Step 0 (fragtnix clean-slate) before becoming the active workshop. See [`docs/transformation/round-0.md`](docs/transformation/round-0.md), [`docs/transformation/Phase-0-audit.md`](docs/transformation/Phase-0-audit.md), [`docs/transformation/Phase-1-prep-fragtnix-clean-slate.md`](docs/transformation/Phase-1-prep-fragtnix-clean-slate.md). Anchor issue: [`arechste/aitools-common#22`](https://github.com/arechste/aitools-common/issues/22).
 
 ## What this is
 

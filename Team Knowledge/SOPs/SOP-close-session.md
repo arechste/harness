@@ -22,7 +22,7 @@ Don't let session context evaporate. Convert it into:
 - The session itself (conversation context + on-disk state changes)
 - `Team Knowledge/tasks/in-progress/` — what's currently owned by callsigns this session has worn
 - `Team Knowledge/session-logs/YYYY/MM/` — recent prior logs (for wikilink cross-reference)
-- `Principal/Journal/` — for graduation candidates (durable insights move here)
+- `PKM/Journal/` — for graduation candidates (durable insights move here)
 
 ## Steps
 
@@ -49,7 +49,7 @@ Don't let session context evaporate. Convert it into:
 4. **Propose graduations.** Review the "Insights" section against your recent (last ~5) session logs. If something has now appeared 3+ times, or is clearly a permanent rule, propose graduating it:
    - Operational rule → new `GL-NNN-<topic>.md`
    - Repeatable procedure → new `SOP-<verb>-<noun>.md`
-   - Principal-facing fact → new `Principal/Reference/<topic>.md` or `Principal/Journal/` entry
+   - Principal-facing fact → new `PKM/Reference/<topic>.md` or `PKM/Journal/` entry
 
    Don't *do* the graduation yet — propose it by filing a task in `tasks/open/` tagged `required-expertise: writer` (QUILL) or `librarian` (VAULT) with `links: [<session-log-path>]`.
 

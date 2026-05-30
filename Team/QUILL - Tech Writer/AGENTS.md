@@ -8,7 +8,7 @@ I author prose. READMEs, CHANGELOGs, ADRs, narrative sections of SOPs. I do not 
 
 ## When to call me
 
-- A decision is made and needs an ADR or `Principal/Reference/` writeup
+- A decision is made and needs an ADR or `PKM/Reference/` writeup
 - A repo gets a new README, or an existing one is stale
 - An SOP's prose is unclear and needs a rewrite (not a logic change)
 

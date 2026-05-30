@@ -13,7 +13,7 @@ links: []
 
 ## Context
 
-VAULT ran a wikilink-health audit across the content layer (`Team/`, `Team Knowledge/`, `Principal/`) on 2026-05-28. Result: 148 wikilink occurrences → 75 unique targets, **27 resolve, 48 dangle**, zero rename drift, zero basename collisions. The danglers are forward-references, not breakage — they are the **Phase-2 PORT worklist**. Each dangling target is a file that should exist once Phase 2 PORTs content in from the product repos.
+VAULT ran a wikilink-health audit across the content layer (`Team/`, `Team Knowledge/`, `PKM/`) on 2026-05-28. Result: 148 wikilink occurrences → 75 unique targets, **27 resolve, 48 dangle**, zero rename drift, zero basename collisions. The danglers are forward-references, not breakage — they are the **Phase-2 PORT worklist**. Each dangling target is a file that should exist once Phase 2 PORTs content in from the product repos.
 
 Target slugs below are written **without wikilink brackets on purpose** so this worklist does not itself register as dead links in CI. Add the brackets (and the `NNN` number for Guidelines) when each file is authored.
 
@@ -94,7 +94,7 @@ All concrete Workstream targets resolve (`WS-001`..`WS-005`, `WS-routing`). Noth
 
 - **Placeholder hygiene already done this session.** The 7 illustrative wikilink examples in the audited content roots (the audit's "Other" group) were neutralized — fenced as code blocks (templates, WS-005 shim-body) or had their non-link brackets dropped (WS-002 globs, generic `wikilink` concept-refs). CI's `wikilink-check` was updated to strip fenced code blocks before extracting links, so fenced examples no longer count. This is NOT part of this backlog — it is complete.
 - **3 out-of-scope stragglers remain**, outside the audit's three content roots and outside the template scope, so they were left for a principal decision: `ADAPTER-PROMPT.md:76` (a `SOP-...` shim-body wikilink example — arguably intentional instruction in the bootstrap prompt) and `docs/transformation/round-0.md:57,238` (`wikilink` and `SOP-XXX` examples — a historical transformation record). CI is informational (`exit 0`), so these warn but do not fail.
-- **Scope note:** the audit scanned `Team/`, `Team Knowledge/`, `Principal/` (75 unique targets, 48 danglers). CI scans the whole tree (currently 54 danglers) — the delta is docs/ and root-level files. This worklist reflects the audit's three-root scope per the principal's framing of the audit as the backlog.
+- **Scope note:** the audit scanned `Team/`, `Team Knowledge/`, `PKM/` (75 unique targets, 48 danglers). CI scans the whole tree (currently 54 danglers) — the delta is docs/ and root-level files. This worklist reflects the audit's three-root scope per the principal's framing of the audit as the backlog.
 
 ## Event log
 

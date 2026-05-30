@@ -82,6 +82,6 @@ If the policy changes (e.g., principal wants team-signed commits with their own 
 1. Update `harness/.gitconfig` to re-enable signing and configure the team key
 2. Update branch protection accordingly
 3. Update this GL (don't delete; supersede)
-4. New SOP entry under `Principal/Journal/` describing the change rationale
+4. New SOP entry under `PKM/Journal/` describing the change rationale
 
 See `[[GL-002-credential-custody]]` for how team signing keys would be held if that direction is taken later.

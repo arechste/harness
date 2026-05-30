@@ -19,7 +19,7 @@ Behavior, routing, taxonomy, and naming rules all live in `/Users/arechste/airep
 2. `/Users/arechste/airepos/common/harness/Team/agent-index.md`
 3. `/Users/arechste/airepos/common/harness/Team Knowledge/tasks/open/`   (find unassigned tasks matching your callsigns)
 4. `/Users/arechste/airepos/common/harness/Team Knowledge/tasks/in-progress/` (work you may already own)
-5. `/Users/arechste/airepos/common/harness/Principal/.user.yaml`
+5. `/Users/arechste/airepos/common/harness/PKM/.user.yaml`
 
 ## Tool-specific notes
 
@@ -27,4 +27,4 @@ Callsigns are bound as host subagents under `/Users/arechste/airepos/common/harn
 
 SOPs are bound as command shims under `/Users/arechste/airepos/common/harness/adapters/claude/commands/<sop-slug>.md`; each shim points at its canonical SOP under `Team Knowledge/SOPs/`. (Discovered by Claude Code via the `.claude/commands/` symlinks that `bootstrap/setup-host.sh` wires.)
 
-Principal preferences (from `Principal/.user.yaml`): terse tone, no preambles, no emoji, one command per Bash call (no `&&` / `||` / `;`).
+Principal preferences (from `PKM/.user.yaml`): terse tone, no preambles, no emoji, one command per Bash call (no `&&` / `||` / `;`).

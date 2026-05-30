@@ -4,7 +4,7 @@
 
 ## Worked on
 
-- Dispatched VAULT as a subagent to audit wikilink health across the content layer (`Team/`, `Team Knowledge/`, `Principal/`). Result: 148 occurrences → 75 unique targets, 27 resolve, 48 dangle, zero rename drift, zero basename collisions.
+- Dispatched VAULT as a subagent to audit wikilink health across the content layer (`Team/`, `Team Knowledge/`, `PKM/`). Result: 148 occurrences → 75 unique targets, 27 resolve, 48 dangle, zero rename drift, zero basename collisions.
 - Placeholder hygiene fix: neutralized the 7 illustrative wikilink examples in the audited roots — fenced as code blocks where the bracket-syntax demo matters (`repo.template`, `agent-contract.template`, `WS-005` shim-body), bracket-dropped where the token was never a real link (`WS-002` filename globs, generic concept-refs in `SOP-close-session` ×2 and the VAULT contract).
 - Taught CI's `wikilink-check` (`.github/workflows/validate.yml`) to strip fenced code blocks before extracting links, so fenced illustrative examples stop being counted. Inline code spans are deliberately NOT stripped — every real wikilink lives in an inline span, so stripping them would gut the check.
 - Filed the Phase-2 PORT backlog as a task: `[[wikilink-port-backlog]]` in `tasks/open/`, tagged `required-expertise: librarian`, grouped by SOP (27) / GL (14) / WS (0) origin.

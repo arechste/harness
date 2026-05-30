@@ -1,6 +1,6 @@
-# Principal — Index
+# PKM — Master Wiki Hub
 
-This is the principal's (user's) space. Agents read it to understand *who they serve*, what the principal cares about, and where the principal's own knowledge lives (separate from the agents' shared SOPs).
+This is the principal's (user's) space — the personal long-term wiki. Agents read it to understand *who they serve*, what the principal cares about, and where the principal's own knowledge lives (separate from the team's shared SOPs in `Team Knowledge/`, which is the BKM).
 
 ## Contents
 
@@ -15,4 +15,4 @@ This is the principal's (user's) space. Agents read it to understand *who they s
 ## Conventions
 
 - Files here are **principal-owned**. Agents may read freely; they should propose edits via a task (not silent edits) unless the SOP they're following explicitly assigns them write authority (e.g., RECON adding a new Reference file).
-- Principal/Journal/ is for the principal's lessons. Agents' lessons go in their own callsign folder's journal (Phase 2 extension).
+- PKM/Journal/ is for the principal's lessons. Agents' lessons go in their own callsign folder's journal (Phase 2 extension).

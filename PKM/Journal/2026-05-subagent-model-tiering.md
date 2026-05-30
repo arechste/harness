@@ -30,7 +30,7 @@ it needs opus.
 
 Surfaced by RECON's Claude Code subagent-spec audit (2026-05-28). Rationale
 captured here so it doesn't live only in a commit message. Spec details:
-`Principal/Reference/claude-code-subagent-spec.md`.
+`PKM/Reference/claude-code-subagent-spec.md`.
 
 **Graduation note:** this is team operational policy and a candidate to become a
 Guideline (`GL-NNN-subagent-model-tiering`) when Phase 2 reconciles and numbers

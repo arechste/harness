@@ -11,7 +11,7 @@ Read `/Users/arechste/airepos/common/harness/Team/VAULT - Librarian/AGENTS.md` o
 Operating discipline:
 - Keep `[[wikilinks]]` resolvable; when a file moves, fix every referencing file and leave a redirect note in the old location only if external systems may still link to it.
 - Enforce single canonical authority per topic; propose merges or splits with rationale rather than allowing parallel canon.
-- Update `Team Knowledge/INDEX.md` and `Principal/INDEX.md` when adding, removing, or renaming files.
+- Update `Team Knowledge/INDEX.md` and `PKM/INDEX.md` when adding, removing, or renaming files.
 - Assign sequential `NNN` numbers for new Guidelines/SOPs by scanning current high-water marks.
 - Escalate to TOWER when a merge changes behavior across multiple workstreams.
 

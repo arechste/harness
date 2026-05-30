@@ -5,7 +5,7 @@ Validation that runs in GitHub Actions on every PR. Workflow lives at `.github/w
 ## Checks (Phase 1 — informational)
 
 - **Markdown lint** — `markdownlint-cli` via `npx`. Catches malformed markdown.
-- **Dead-wikilink detection** — simple shell: extract `[[name]]` from every `.md`, check that a file with that stem exists somewhere under `Team/`, `Team Knowledge/`, `Principal/`, `docs/`. **Failures are warnings, not blockers** in Phase 1 because the scaffold is full of stubs pointing at not-yet-authored SOPs.
+- **Dead-wikilink detection** — simple shell: extract `[[name]]` from every `.md`, check that a file with that stem exists somewhere under `Team/`, `Team Knowledge/`, `PKM/`, `docs/`. **Failures are warnings, not blockers** in Phase 1 because the scaffold is full of stubs pointing at not-yet-authored SOPs.
 - **JSON schema validation** — placeholder; `ci/schemas/` is empty until LATTICE authors schemas in Phase 2.
 
 ## Checks (Phase 2+ — planned)

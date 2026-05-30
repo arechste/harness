@@ -52,7 +52,7 @@ Source: `~/airepos/common/aitools-common/`. Future rename → `aitools-claude` p
 | `data/fleet-context.md` | PORT | `harness/Team Knowledge/Guidelines/GL-NNN-fleet-context.md` | Shared fleet rules |
 | `data/home-write-guard-paths.json` | PORT | `harness/adapters/claude/hooks/` (companion data) | Travels with hook |
 | `data/sync-conventions-config.json` | KEEP-CLAUDE | — | Plugin-local sync target config |
-| `data/references/source_memory_consolidation.json` | PORT | `harness/Principal/Reference/source-memory-consolidation.md` | Source ref per taxonomy |
+| `data/references/source_memory_consolidation.json` | PORT | `harness/PKM/Reference/source-memory-consolidation.md` | Source ref per taxonomy |
 | `data/schemas/delegated-issues.schema.json` | PORT | `harness/ci/schemas/delegated-issues.schema.json` | Validation in harness CI |
 | `data/schemas/delegation-inbox.schema.json` | PORT | `harness/ci/schemas/delegation-inbox.schema.json` | |
 | `data/schemas/repo-inventory.schema.json` | PORT | `harness/ci/schemas/repo-inventory.schema.json` | |
@@ -96,7 +96,7 @@ Source: `~/airepos/common/dotclaude/`. Post-Phase-5a target: ~500 lines (chezmoi
 **`home/memory/feedback_*.md`** — all 3 PORT to `harness/Team Knowledge/Guidelines/GL-NNN-feedback-<topic>.md`:
 `feedback_bash_no_compound.md`, `feedback_chrome_mcp.md`, `feedback_op_syntax.md`.
 
-**`home/memory/source_*.md`** — all 9 PORT to `harness/Principal/Reference/<topic>.md`:
+**`home/memory/source_*.md`** — all 9 PORT to `harness/PKM/Reference/<topic>.md`:
 `source_agent_patterns.md`, `source_claude_code_features.md`, `source_claude_code_permissions.md`, `source_claude_models.md`, `source_compaction_api.md`, `source_folder_trust.md`, `source_official_docs.md`, `source_settings_permissions.md`, `source_surfaces.md`.
 
 **`home/skills/<skill>/SKILL.md`** — all 9 U-tier PORT (split: body → SOPs/, shim → adapters/claude/commands/):
@@ -142,21 +142,21 @@ Source: `~/airepos/common/dotfiles/`. Round-0 says: largely unchanged. The PORT 
 | `.claude/rules/delegation.md` | `harness/Team Knowledge/Guidelines/GL-NNN-delegation.md` (or merge with delegation SOPs) | Cross-cutting delegation state machine |
 | `docs/conventions/workspace-management.md` | `harness/Team Knowledge/Guidelines/GL-NNN-workspace-management.md` | Marked as mirrored from git-organizer (canonical lives there — see git-organizer SPLIT for workspace-and-fleet.md) |
 | `docs/decisions/ADR-002-three-repo-ownership-model.md` | `harness/docs/decisions/historical/dotfiles-ADR-002.md` (or Reference) | Cross-stack ownership boundaries |
-| `docs/decisions/ADR-007-credential-management-ownership.md` | `harness/docs/decisions/historical/dotfiles-ADR-007.md` (or `Principal/Reference/`) | Canonical credential stack (op, 1Password, gh, sops) |
+| `docs/decisions/ADR-007-credential-management-ownership.md` | `harness/docs/decisions/historical/dotfiles-ADR-007.md` (or `PKM/Reference/`) | Canonical credential stack (op, 1Password, gh, sops) |
 | `docs/decisions/ADR-009-session-broker-pattern.md` | `harness/docs/decisions/historical/dotfiles-ADR-009.md` | OP_SESSION broker / 12h TTL — affects all Claude sessions. Pre-030 → boundary applies; mirror as historical reference in harness |
 | `docs/decisions/ADR-010-per-project-secrets.md` | `harness/docs/decisions/historical/dotfiles-ADR-010.md` | Per-project secrets convention (op vs sops) |
-| `docs/reference/dotclaude-pin-lifecycle.md` | `harness/Principal/Reference/dotclaude-data-contract.md` | dotfiles↔dotclaude convergence model |
-| `docs/reference/glossary.md` | `harness/Principal/Reference/glossary.md` (merge with harness glossary) | Shared vocabulary; extends dotclaude glossary |
-| `docs/reference/permission-tiers.md` | `harness/Principal/Reference/permission-tiers.md` | Autonomy levels apply to all repos |
-| `docs/reference/repo-ownership.md` | `harness/Principal/Reference/repo-ownership.md` | Canonical repo authority table |
+| `docs/reference/dotclaude-pin-lifecycle.md` | `harness/PKM/Reference/dotclaude-data-contract.md` | dotfiles↔dotclaude convergence model |
+| `docs/reference/glossary.md` | `harness/PKM/Reference/glossary.md` (merge with harness glossary) | Shared vocabulary; extends dotclaude glossary |
+| `docs/reference/permission-tiers.md` | `harness/PKM/Reference/permission-tiers.md` | Autonomy levels apply to all repos |
+| `docs/reference/repo-ownership.md` | `harness/PKM/Reference/repo-ownership.md` | Canonical repo authority table |
 | `docs/guides/git-worktrees.md` | `harness/Team Knowledge/Guidelines/GL-NNN-git-worktrees.md` | Cross-repo worktree lifecycle and multi-session safety |
 | `docs/guides/session-coordination.md` | `harness/Team Knowledge/Guidelines/GL-NNN-session-coordination.md` | Multi-session coordination, claiming, cross-machine |
-| `docs/security/access-matrix.md` | `harness/Principal/Reference/access-matrix.md` | Interactive vs headless actor model |
-| `docs/security/claude-code-permissions.md` | `harness/Principal/Reference/claude-code-permissions.md` | Permission layer model |
+| `docs/security/access-matrix.md` | `harness/PKM/Reference/access-matrix.md` | Interactive vs headless actor model |
+| `docs/security/claude-code-permissions.md` | `harness/PKM/Reference/claude-code-permissions.md` | Permission layer model |
 | `docs/security/per-project-secrets.md` | `harness/Team Knowledge/Guidelines/GL-NNN-per-project-secrets.md` | Cross-cutting (paired with ADR-010) |
 | `docs/security/secrets-conventions.md` | `harness/Team Knowledge/Guidelines/GL-NNN-secrets-conventions.md` | Storage/scanning/.env/deny patterns |
 
-**Note on ADRs:** Per R0, "pre-Round-0 ADRs stay in dotclaude" — but dotfiles also holds ADRs. Treat dotfiles' ADRs as REPO-LOCAL canonical; PORT items above are *mirrored references* in harness (read-only copies under `docs/decisions/historical/` or `Principal/Reference/`) to keep cross-stack discoverability. To revisit in Phase 2 when ADR migration boundary is finalized.
+**Note on ADRs:** Per R0, "pre-Round-0 ADRs stay in dotclaude" — but dotfiles also holds ADRs. Treat dotfiles' ADRs as REPO-LOCAL canonical; PORT items above are *mirrored references* in harness (read-only copies under `docs/decisions/historical/` or `PKM/Reference/`) to keep cross-stack discoverability. To revisit in Phase 2 when ADR migration boundary is finalized.
 
 ### DROP
 
@@ -234,7 +234,7 @@ Source: `~/airepos/common/mac-organizer/`. Rename + `os:` field scope expansion 
 | `docs/attended-runbooks.md` | `harness/Team Knowledge/SOPs/SOP-attended-runbooks.md` |
 | `docs/browser-policy.md` | `harness/Team Knowledge/Guidelines/GL-NNN-browser-policy.md` |
 | `docs/delegation-map.md` | `harness/Team Knowledge/Workstreams/WS-003-fleet.md` (or SOPs/) |
-| `docs/fleet-assessment-2026-03.md` | `harness/Team Knowledge/session-logs/` (or `Principal/Journal/`) |
+| `docs/fleet-assessment-2026-03.md` | `harness/Team Knowledge/session-logs/` (or `PKM/Journal/`) |
 | `docs/fleet-overview.md` | `harness/Team Knowledge/Workstreams/WS-003-fleet.md` |
 | `docs/github-auth.md` | `harness/Team Knowledge/SOPs/SOP-github-auth.md` |
 | `docs/permissions.md` | `harness/Team Knowledge/Guidelines/GL-NNN-agent-permissions.md` |
@@ -247,7 +247,7 @@ Source: `~/airepos/common/mac-organizer/`. Rename + `os:` field scope expansion 
 **docs/standards/** — all 3 PORT to `harness/Team Knowledge/Guidelines/`:
 `maintenance-baseline.md`, `security-baseline.md`, `update-policy.md`.
 
-**docs/research/claude-signing-keys.md** → `harness/Principal/Reference/claude-signing-keys.md`.
+**docs/research/claude-signing-keys.md** → `harness/PKM/Reference/claude-signing-keys.md`.
 
 **docs/plans/fleet-readiness.md** → `harness/Team Knowledge/tasks/done/<YYYY>/<MM>/` (completed task wrap).
 

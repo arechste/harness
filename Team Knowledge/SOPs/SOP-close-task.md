@@ -21,7 +21,7 @@ Move the task to `done/<YYYY>/<MM>/`, write a brief outcome, and extract any dur
 1. Append a `closed:` event line: 1-3 sentences on the outcome, with links.
 2. Set frontmatter `status: done`, `closed_at: <ISO ts>`.
 3. `git mv Team Knowledge/tasks/in-progress/<task>.md Team Knowledge/tasks/done/$(date +%Y)/$(date +%m)/<task>.md` (mkdir -p the year/month dirs if missing).
-4. If the work produced a durable insight (a lesson, a pattern, a non-obvious gotcha worth surfacing later), write a short note to `Principal/Journal/<YYYY>-<MM>-<slug>.md` and link it back from the task's frontmatter `linked_journal_entries:`.
+4. If the work produced a durable insight (a lesson, a pattern, a non-obvious gotcha worth surfacing later), write a short note to `PKM/Journal/<YYYY>-<MM>-<slug>.md` and link it back from the task's frontmatter `linked_journal_entries:`.
 5. Commit: `chore(task): close <task-id>`.
 
 ## Worked example

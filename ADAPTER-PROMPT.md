@@ -30,7 +30,7 @@ This overlay is non-negotiable. Any tool-specific pointer file you generate must
 
 1. Read `AGENTS.md` at the folder root (especially the session-boot order).
 2. Read `Team/agent-index.md` — the routing table.
-3. Read `Team Knowledge/INDEX.md`, `Principal/INDEX.md`, and `Principal/.user.yaml`. The principal's identity is already captured under `.user.yaml` — there is no first-time personalization step.
+3. Read `Team Knowledge/INDEX.md`, `PKM/INDEX.md`, and `PKM/.user.yaml`. The principal's identity is already captured under `.user.yaml` — there is no first-time personalization step.
 4. Identify the tool you are running in.
 5. Write or rewrite the appropriate tool-specific pointer file using the template at the bottom. Paths by tool:
 
@@ -108,7 +108,7 @@ Behavior, routing, taxonomy, and naming rules all live in `{{HARNESS_ROOT}}/AGEN
 2. `{{HARNESS_ROOT}}/Team/agent-index.md`
 3. `{{HARNESS_ROOT}}/Team Knowledge/tasks/open/`   (find unassigned tasks matching your callsigns)
 4. `{{HARNESS_ROOT}}/Team Knowledge/tasks/in-progress/` (work you may already own)
-5. `{{HARNESS_ROOT}}/Principal/.user.yaml`
+5. `{{HARNESS_ROOT}}/PKM/.user.yaml`
 
 ## Tool-specific notes
 
