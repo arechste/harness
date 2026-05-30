@@ -60,7 +60,7 @@ Remaining 25 (one reference each, all from agent contracts):
 
 ### GL origin — 14 Guidelines authored with the literal `NNN` placeholder, never numbered
 
-High-water mark today is `GL-004` (after GL-003-doc-authoring + GL-004-release-versioning landed 2026-05-30), so numbering resumes at `GL-005`. When each is authored, swap the `NNN` in every referencing link for the assigned number.
+High-water mark today is `GL-005` (after GL-003-doc-authoring + GL-004-release-versioning landed 2026-05-30 and GL-005-code-of-conduct landed via `76a2cd3`), so numbering resumes at `GL-006`. When each is authored, swap the `NNN` in every referencing link for the assigned number.
 
 | slug | refs | example source |
 |---|---|---|
