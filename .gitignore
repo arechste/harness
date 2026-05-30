@@ -16,3 +16,13 @@ repos/*/
 
 # OS noise
 .DS_Store
+
+# Credential metadata inventory is SECRET-FREE and must be tracked, overriding
+# the global *credentials* ignore (~/.gitignore_global). Re-include the dir and
+# the inventory; keep any ACTUAL secret material (sops/age/keys) ignored.
+!state/credentials/
+!state/credentials/INVENTORY.yaml
+state/credentials/*.sops.yaml
+state/credentials/*.key
+state/credentials/*.age
+state/credentials/age-key*
