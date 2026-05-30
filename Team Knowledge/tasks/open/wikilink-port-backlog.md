@@ -60,13 +60,13 @@ Remaining 25 (one reference each, all from agent contracts):
 
 ### GL origin — 14 Guidelines authored with the literal `NNN` placeholder, never numbered
 
-High-water mark today is `GL-002`, so numbering resumes at `GL-003`. When each is authored, swap the `NNN` in every referencing link for the assigned number.
+High-water mark today is `GL-004` (after GL-003-doc-authoring + GL-004-release-versioning landed 2026-05-30), so numbering resumes at `GL-005`. When each is authored, swap the `NNN` in every referencing link for the assigned number.
 
 | slug | refs | example source |
 |---|---|---|
 | `GL-NNN-commit-format` | 3 | `Team Knowledge/Guidelines/GL-001-commit-autonomy.md` |
 | `GL-NNN-label-taxonomy` | 2 | `Team Knowledge/Workstreams/WS-004-git-conventions.md` |
-| `GL-NNN-release-versioning` | 2 | `Team Knowledge/Workstreams/WS-004-git-conventions.md` |
+| ~~`GL-NNN-release-versioning`~~ → **GL-004-release-versioning** (authored 2026-05-30) | 2 | `Team Knowledge/Workstreams/WS-004-git-conventions.md` |
 | `GL-NNN-agent-permissions` | 1 | `Team Knowledge/Workstreams/WS-003-fleet.md` |
 | `GL-NNN-cross-project-architecture` | 1 | `Team Knowledge/Workstreams/WS-001-dotfiles.md` |
 | `GL-NNN-fleet-context` | 1 | `Team Knowledge/Workstreams/WS-003-fleet.md` |
