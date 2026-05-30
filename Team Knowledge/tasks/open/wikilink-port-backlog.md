@@ -33,24 +33,24 @@ Remaining 25 (one reference each, all from agent contracts):
 | slug | example source |
 |---|---|
 | `SOP-add-brew-formula` | `Team/FORGE - DevOps Engineer/AGENTS.md` |
-| `SOP-add-hook` | `Team/RELAY - AI Tooling Engineer/AGENTS.md` |
-| `SOP-add-mcp-server` | `Team/BRIDGE - Integrator/AGENTS.md` |
+| `SOP-add-hook` | `Team/RELAY - Adapter Engineer/AGENTS.md` |
+| `SOP-add-mcp-server` | `Team/CASCADE - GitOps Engineer/AGENTS.md` |
 | `SOP-audit-conventions` | `Team/SENTRY - Auditor/AGENTS.md` |
 | `SOP-audit-credentials` | `Team Knowledge/Guidelines/GL-002-credential-custody.md` |
 | `SOP-audit-permissions` | `Team/SENTRY - Auditor/AGENTS.md` |
-| `SOP-audit-wikilinks` | `Team/VAULT - Librarian/AGENTS.md` |
+| `SOP-audit-wikilinks` | `Team/TOWER - COO/AGENTS.md` |
 | `SOP-author-schema` | `Team/LATTICE - Schemar/AGENTS.md` |
 | `SOP-bump-runtime` | `Team/FORGE - DevOps Engineer/AGENTS.md` |
-| `SOP-fleet-maintenance` | `Team/RANGER - SysAdmin/AGENTS.md` |
-| `SOP-merge-canonicals` | `Team/VAULT - Librarian/AGENTS.md` |
+| `SOP-fleet-maintenance` | `Team/FORGE - DevOps Engineer/AGENTS.md` |
+| `SOP-merge-canonicals` | `Team/TOWER - COO/AGENTS.md` |
 | `SOP-merge-pr` | `Team/CASCADE - GitOps Engineer/AGENTS.md` |
 | `SOP-migrate-frontmatter` | `Team/LATTICE - Schemar/AGENTS.md` |
-| `SOP-new-machine-setup` | `Team/RANGER - SysAdmin/AGENTS.md` |
+| `SOP-new-machine-setup` | `Team/FORGE - DevOps Engineer/AGENTS.md` |
 | `SOP-research-topic` | `Team/RECON - Researcher/AGENTS.md` |
 | `SOP-rotate-credential` | `Team Knowledge/Guidelines/GL-002-credential-custody.md` |
-| `SOP-rotate-forge-token` | `Team/BRIDGE - Integrator/AGENTS.md` |
+| `SOP-rotate-forge-token` | `Team/CASCADE - GitOps Engineer/AGENTS.md` |
 | `SOP-secret-scan` | `Team/SENTRY - Auditor/AGENTS.md` |
-| `SOP-update-adapter-prompt` | `Team/RELAY - AI Tooling Engineer/AGENTS.md` |
+| `SOP-update-adapter-prompt` | `Team/RELAY - Adapter Engineer/AGENTS.md` |
 | `SOP-update-reference` | `Team/RECON - Researcher/AGENTS.md` |
 | `SOP-work-issue` | `Team/CASCADE - GitOps Engineer/AGENTS.md` |
 | `SOP-write-adr` | `Team/QUILL - Tech Writer/AGENTS.md` |

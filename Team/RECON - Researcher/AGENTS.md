@@ -30,4 +30,4 @@ I gather and triage external information. I prefer official sources (vendor docs
 
 ## Escalate to
 
-VAULT — if a new Reference file conflicts with an existing canonical entry.
+TOWER (librarian-pass) — if a new Reference file conflicts with an existing canonical entry.

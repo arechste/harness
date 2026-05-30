@@ -2,7 +2,7 @@
 
 **Repo:** `arechste/dotfiles` (at `~/airepos/common/dotfiles/`)
 **Distribution:** chezmoi to all fleet machines
-**Primary agents:** FORGE, RANGER
+**Primary agents:** FORGE (RANGER folded into FORGE 2026-05-30)
 
 ## Goal
 

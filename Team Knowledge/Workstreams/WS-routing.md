@@ -27,4 +27,4 @@ Per Phase-0-audit, **git-organizer is canonical**; the other two are mirrors tha
 | Unassigned task in `tasks/open/` | `[[SOP-route-task]]` | TOWER |
 | New expertise gap | `[[SOP-hire-agent]]` | SCOUT |
 | Cross-repo work request | `[[SOP-file-delegation]]` | CASCADE |
-| Fleet machine cutover | `[[SOP-cutover-machine]]` | RANGER |
+| Fleet machine cutover | `[[SOP-cutover-machine]]` | FORGE |

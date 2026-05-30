@@ -1,6 +1,6 @@
 # SOP-cutover-machine — Deploy slimmed harness/dotfiles/dotclaude to a fleet machine
 
-**Owner:** RANGER. **Triggers:** Phase 5b — a non-workshop machine is being moved to the post-Phase-5a thin regime.
+**Owner:** FORGE (RANGER folded in 2026-05-30). **Triggers:** Phase 5b — a non-workshop machine is being moved to the post-Phase-5a thin regime.
 
 ## Purpose
 

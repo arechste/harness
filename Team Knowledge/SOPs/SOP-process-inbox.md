@@ -1,6 +1,6 @@
 # SOP-process-inbox — File raw principal intake from `Team Inbox/`
 
-**Owner:** TOWER (triage); VAULT (capture & filing). **Triggers:** principal says "process the inbox" or files appear in `Team Inbox/`.
+**Owner:** TOWER (triage + librarian-pass capture & filing — VAULT folded in 2026-05-30). **Triggers:** principal says "process the inbox" or files appear in `Team Inbox/`.
 
 ## Purpose
 
@@ -32,7 +32,7 @@ Sweep `Team Inbox/`, route each item to its right home (PKM / Team Knowledge / D
    - Operational state (machine note, delegation update) → `state/<area>/...`
    - Sensitive (credential, PII) → STOP, escalate via `[[SOP-escalate-blocked]]` — never paste into the repo
 3. **Route.** If the item needs work (research, hire, audit), TOWER calls `[[SOP-route-task]]` to set `assignee:` on the new task.
-4. **Capture.** VAULT (or the routed callsign) writes the destination file and adds `[[wikilinks]]` to related concepts already in PKM.
+4. **Capture.** TOWER (librarian-mode) — or the routed callsign — writes the destination file and adds `[[wikilinks]]` to related concepts already in PKM.
 5. **Cross-link.** Add a back-reference from any concept file that now mentions a new entity (a Person mentioned in a Journal entry gets a stub in `CRM/People/`).
 6. **Remove the original.** Once filed, `git rm` the original from `Team Inbox/` (the destination is now the SSOT — the inbox is transient).
 7. **Report.** TOWER returns a short summary: items in, destinations out, tasks filed, any items escalated.
@@ -58,7 +58,7 @@ Report: 3 items in → 1 journal entry + 2 stubs + 1 image + 1 task; no escalati
 ## Common mistakes
 
 - **Pasting sensitive content** (a screenshot of a 1P unlock, an email with a token). STOP, do not commit; escalate.
-- **Filing without cross-linking.** A new Person stub without back-references defeats the wiki — VAULT's pass adds the links.
+- **Filing without cross-linking.** A new Person stub without back-references defeats the wiki — TOWER's librarian-pass adds the links.
 - **Routing the *original* file instead of filing it.** Inbox items are *inputs*; they get filed to their destination and removed. They are not tasks themselves.
 - **Skipping the daily Journal append.** End-of-day brain-dumps belong in the Journal; spinning up a Project/Topic for every sentence is over-filing.
 

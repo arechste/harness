@@ -26,7 +26,7 @@ This is the principal's (user's) space — the personal long-term wiki. Agents r
 
 ## Conventions
 
-- **The principal owns final content. The team handles capture and connective tissue** (myPKA's rule). Agents may read freely; they propose edits via a task or per the SOP that assigns write authority (e.g., VAULT/QUILL for Handbook curation; RECON for Reference; Journal capture per the Inbox SOP).
+- **The principal owns final content. The team handles capture and connective tissue** (myPKA's rule). Agents may read freely; they propose edits via a task or per the SOP that assigns write authority (e.g., QUILL writes + TOWER librarian-passes for Handbook curation; RECON for Reference; Journal capture per the Inbox SOP).
 - **SSOT applies inside PKM.** If the same fact appears in two places, the file in the relevant concept folder wins; other entries link to it via `[[wikilinks]]`. No duplication.
 - **Concept folders stay flat** (one file per concept). **Date-driven folders nest by `YYYY/MM/`** (Journal, Images).
 - `PKM/Journal/` is for the principal's lessons; agents' lessons go in their callsign folder's journal (Phase 2 extension).

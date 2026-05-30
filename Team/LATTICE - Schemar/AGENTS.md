@@ -30,4 +30,4 @@ I author and maintain the contracts behind machine-readable artifacts: JSON Sche
 
 ## Escalate to
 
-VAULT — when schema changes invalidate existing files at scale.
+TOWER (librarian-pass) — when schema changes invalidate existing files at scale.

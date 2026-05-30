@@ -41,17 +41,18 @@ Don't let session context evaporate. Convert it into:
    - **Next likely move:** one sentence on where you'd start next session
    - **Wikilinks:** to prior session logs on the same thread, relevant SOPs, the principal's journal entries you created
 
-3. **Librarian pass (VAULT hat).** Quick scan:
-   - Any wikilink you used that doesn't resolve to a real file? Note it in `notes` or open a small `Team Knowledge/tasks/open/` task tagged `required-expertise: vault`.
+3. **Librarian pass (TOWER hat — VAULT folded into TOWER 2026-05-30).** Quick scan:
+   - Any wikilink you used that doesn't resolve to a real file? Note it in `notes` or open a small `Team Knowledge/tasks/open/` task tagged `required-expertise: librarian`.
    - Any new file you created without an INDEX entry? Add the entry.
    - Any SSOT drift (same fact written in two places)? Flag for cleanup or fix in place if trivial.
+   - Any front-matter `last-verified:` you touched? Refresh to today's date.
 
 4. **Propose graduations.** Review the "Insights" section against your recent (last ~5) session logs. If something has now appeared 3+ times, or is clearly a permanent rule, propose graduating it:
    - Operational rule → new `GL-NNN-<topic>.md`
    - Repeatable procedure → new `SOP-<verb>-<noun>.md`
    - Principal-facing fact → new `PKM/Reference/<topic>.md` or `PKM/Journal/` entry
 
-   Don't *do* the graduation yet — propose it by filing a task in `tasks/open/` tagged `required-expertise: writer` (QUILL) or `librarian` (VAULT) with `links: [<session-log-path>]`.
+   Don't *do* the graduation yet — propose it by filing a task in `tasks/open/` tagged `required-expertise: writer` (QUILL) or `librarian` (TOWER) with `links: [<session-log-path>]`.
 
 5. **Commit and push the session log.** Per `[[GL-001-commit-autonomy]]`, harness permits direct-to-`main` push for session-log commits (the log IS the qualifying meta-change). Stage *only* the artifacts close-session itself produced — the new log file, any `INDEX.md` updates from the librarian pass, any new graduation-task files in `tasks/open/`. Do NOT bundle in unrelated uncommitted state from the session; substantive work belongs in its own commit by the agent that did it.
 

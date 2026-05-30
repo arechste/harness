@@ -7,7 +7,7 @@ Anything you throw in here gets filed. Screenshots, voice memos, business cards,
 ## How it works
 
 - You drop a file (or paste content into a `.md` file).
-- **TOWER** triages, routes to the right callsign (usually **VAULT** for capture and filing).
+- **TOWER** triages, routes to the right callsign (usually **TOWER itself** in librarian-mode for capture and filing, per the myPKA Larry pattern).
 - The callsign files it into PKM (life, CRM, journal, documents, images), Team Knowledge (if it's a durable team artifact), Deliverables (if it's something the team will work on into a brief), or state/ (if it's operational).
 - Cross-links via `[[wikilinks]]` get added automatically.
 - The processed input gets removed from Team Inbox once filed.
@@ -20,7 +20,7 @@ The SOP that runs this loop: `[[SOP-process-inbox]]`.
 - Voice memos to be transcribed.
 - Random ideas you want captured but don't want to file yourself.
 - Links to articles for **RECON** to research deeper.
-- A quick `.md` brain-dump at end of day for **VAULT** to file across PKM.
+- A quick `.md` brain-dump at end of day for **TOWER (librarian-mode)** to file across PKM.
 
 ## What does NOT go here
 

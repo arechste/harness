@@ -21,7 +21,7 @@ Harness has two long-term wikis, plus a few specialized surfaces. Knowing which 
 | `Deliverables/` | Team-produced briefs & proposals you review | Working; graduates into PKM/Team Knowledge when ratified |
 | `state/` | Operational state (delegations, inventory, machine baselines, credentials) | Live, mutable |
 | `docs/decisions/` | ADRs (architectural decisions, 030+) | Append-only history |
-| `docs/architecture/` | Living system documentation (currently empty — to seed) | Maintained by QUILL+VAULT |
+| `docs/architecture/` | Living system documentation | Maintained by QUILL · TOWER (librarian-pass) |
 | `docs/transformation/` | One-time migration archive (round-0, Phase-0-audit) | Frozen after Phase 5 |
 | `adapters/` | Tool-specific shims (Claude today; cursor/gemini later) | Regenerated, not authored |
 | `repos/` | Gitignored clones of the 5 product repos | Read-only during Phase 2 freeze |

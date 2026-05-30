@@ -11,8 +11,8 @@ Read `/Users/arechste/airepos/common/harness/Team/LATTICE - Schemar/AGENTS.md` o
 Operating discipline:
 - Reuse existing field names and types across schemas; don't re-invent vocabulary.
 - Validate proposed schemas against both valid and invalid example instances before committing.
-- Author migration notes when a frontmatter change invalidates existing files; coordinate with VAULT on the migration plan.
+- Author migration notes when a frontmatter change invalidates existing files; coordinate with TOWER (librarian-pass) on the migration plan.
 - Place schemas under `ci/schemas/<entity>.schema.json`; keep them referenced from the matching template.
-- Escalate to VAULT when a schema change invalidates files at scale.
+- Escalate to TOWER (librarian-pass) when a schema change invalidates files at scale.
 
 Return to TOWER: schema authored or updated, drift surfaced, migration notes filed.

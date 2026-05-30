@@ -8,23 +8,22 @@ Personal infra assistant for [@arechste](https://github.com/arechste) — a team
 
 A scaffold inspired by [myICOR/myPKA](https://github.com/myICOR/myPKA) — plain markdown SOPs/Guidelines/Workstreams read at runtime by AI agents via `[[wikilinks]]`. Tool-agnostic at the content layer; tool-specific shims (Claude Code, future Cursor/Gemini) live under `adapters/`.
 
-## The team (Phase 1 contracts authored as stubs)
+## The team (10 callsigns — 6 core myPKA + 4 complementary infra)
 
-| Callsign | Animal | Role |
-|---|---|---|
-| TOWER | Eagle | COO / Orchestrator |
-| SCOUT | Wolf | Recruiter |
-| RECON | Fox | Researcher |
-| VAULT | Elephant | Librarian |
-| QUILL | Magpie | Tech Writer |
-| LATTICE | Spider | Schemar |
-| BRIDGE | Octopus | Integrator |
-| SENTRY | Mongoose | Auditor |
-| FORGE | Beaver | DevOps Engineer |
-| RANGER | Border Collie | SysAdmin |
-| SPARK | Raccoon | Developer |
-| CASCADE | Salmon | GitOps Engineer |
-| RELAY | Chameleon | AI Tooling Engineer |
+Consolidated 2026-05-30 from the round-0 13-roster (VAULT → TOWER, RANGER → FORGE, BRIDGE → CASCADE). See [`Team/agent-index.md`](Team/agent-index.md) for full roster + expertise tags; [`PKM/Handbook/02-the-team.md`](PKM/Handbook/02-the-team.md) for the principal-facing cheat-sheet.
+
+| Callsign | Animal | Role | Tier |
+|---|---|---|---|
+| TOWER | Eagle | COO / Orchestrator (+ librarian-pass) | Core |
+| SCOUT | Wolf | Recruiter | Core |
+| RECON | Fox | Researcher | Core |
+| QUILL | Magpie | Tech Writer (+ journal) | Core |
+| LATTICE | Spider | Schemar | Core |
+| SPARK | Raccoon | Automation specialist | Core |
+| FORGE | Beaver | DevOps + SysAdmin (homedir + fleet) | Complementary |
+| CASCADE | Salmon | GitOps + Integrator (git/gh + MCP/forge APIs) | Complementary |
+| RELAY | Chameleon | Adapter Engineer (the only tool-coupled role) | Complementary |
+| SENTRY | Mongoose | Auditor (independent for separation of duties) | Complementary |
 
 ## Bootstrap
 

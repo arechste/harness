@@ -1,35 +1,46 @@
+---
+form: reference
+last-verified: 2026-05-30
+owner: QUILL
+status: authoritative
+---
+
 # 2. The team
 
-13 callsigns today. They're all the same model wearing different hats — a "hat" means: TOWER reads `Team/<CALLSIGN>/AGENTS.md` and follows that contract while doing the work, then returns to TOWER to synthesize. You usually talk to TOWER; TOWER pulls in the right callsign for the work.
+**10 callsigns**: 6 core (myPKA scaffold-aligned) + 4 complementary (harness infrastructure). They're all the same model wearing different hats — a "hat" means TOWER reads `Team/<CALLSIGN>/AGENTS.md` and follows that contract while doing the work, then returns to TOWER to synthesize. You usually talk to TOWER; TOWER pulls in the right callsign for the work.
 
-> *Open question (noted, not yet decided):* 13 may be more than needed for one principal + one operator. Could collapse to ~5 domain owners + TOWER. Flag if you want to reshape.
+> **Consolidated 2026-05-30 from the original 13-roster.** VAULT folded into TOWER (myPKA-style librarian-pass), RANGER folded into FORGE (one "what the machine is" layer), BRIDGE folded into CASCADE (external-API craft).
 
-## Quick cheat-sheet
+## Core 6 — myPKA scaffold
 
 | Callsign | Animal | What they're for | When to invoke |
 |---|---|---|---|
-| **TOWER** | Eagle | COO / orchestrator | Default — talk to TOWER about anything. Routes work, synthesizes results. |
-| **SCOUT** | Wolf | Recruiter | "We need a new role / expertise harness doesn't have yet." |
-| **RECON** | Fox | Researcher | "Look this up, dig into this topic, find authoritative sources." |
-| **VAULT** | Elephant | Librarian (SSOT) | "Process the inbox," "audit broken wikilinks," "where is X filed." |
-| **QUILL** | Magpie | Tech Writer | "Write a doc / ADR / README / Handbook page." |
-| **LATTICE** | Spider | Schemar | "Author a JSON/YAML schema or frontmatter contract." |
-| **BRIDGE** | Octopus | Integrator | "Set up an MCP server, a forge API integration, a connector." |
-| **SENTRY** | Mongoose | Auditor | "Audit permissions, find security drift, check the autonomy contract vs settings." |
-| **FORGE** | Beaver | DevOps Engineer | "Touch chezmoi, mise, brew, runtime envs, packages." |
-| **RANGER** | Border Collie | SysAdmin | "Fleet ops, machine inventory, OS configs, onboard/decommission a machine." |
-| **SPARK** | Raccoon | Developer | "Write a script — shell, python, small automation." |
-| **CASCADE** | Salmon | GitOps Engineer | "Branches, PRs, releases, repo conventions, gh CLI heavy work." |
-| **RELAY** | Chameleon | AI Tooling Engineer | "Claude Code config, plugins, adapters, hooks, subagent shims." |
+| **TOWER** | Eagle | COO / orchestrator (+ librarian-pass at session close) | Default — talk to TOWER about anything. Routes, synthesizes, runs the session-close librarian pass (wikilinks / INDEX freshness). |
+| **SCOUT** | Wolf | Recruiter | "We need a new callsign / Expansion pack." |
+| **RECON** | Fox | Researcher | "Look this up; dig into this topic; find authoritative sources." |
+| **QUILL** | Magpie | Tech Writer (+ journal capture) | "Write a doc / ADR / README / Handbook page." Also captures the Journal. |
+| **LATTICE** | Spider | Schemar / data architect | "Author a JSON/YAML schema or frontmatter contract." |
+| **SPARK** | Raccoon | Automation specialist (developer) | "Write a script — shell, python, small automation." |
+
+## Complementary 4 — harness infrastructure
+
+| Callsign | Animal | What they're for | When to invoke |
+|---|---|---|---|
+| **FORGE** | Beaver | DevOps + SysAdmin (homedir tooling + fleet/machines) | "Touch chezmoi, mise, brew, runtime envs, packages." **Also:** "Onboard/decommission a machine, update inventory, OS configs, mirror-backup." |
+| **CASCADE** | Salmon | GitOps + Integrator (git/gh + MCP/forge APIs) | "Branches, PRs, releases, repo conventions." **Also:** "Set up an MCP server, a forge API integration, a connector." |
+| **RELAY** | Chameleon | **Adapter Engineer — the only tool-coupled callsign** | "Claude Code config, plugins, adapters, hooks, subagent shims." Future: cursor/gemini adapters. |
+| **SENTRY** | Mongoose | Auditor (independent for separation of duties) | "Audit permissions, find security drift, check the autonomy contract vs. enforcement." |
 
 ## How to invoke
 
 - The natural way: tell TOWER what you want, in plain language. TOWER picks the callsign(s).
-- If you know the right one: "ask RECON to research X" or "have VAULT audit Y" works fine.
+- If you know the right one: "ask RECON to research X" or "have CASCADE prepare a branch" works fine.
 - Multiple callsigns can run in parallel for independent work (e.g., RECON researching while CASCADE prepares a branch).
+- "Librarian work" goes to TOWER (no separate VAULT). "Fleet work" goes to FORGE (no separate RANGER). "Integrations" go to CASCADE (no separate BRIDGE).
 
 ## Source of truth
 
 - `Team/agent-index.md` — the official routing table (callsign → expertise tags).
-- `Team/<CALLSIGN> - <Role>/AGENTS.md` — each callsign's full contract (what they own, what SOPs they run, what they're not allowed to do).
+- `Team/<CALLSIGN> - <Role>/AGENTS.md` — each callsign's full contract.
 - `adapters/claude/agents/<slug>.md` — the Claude Code shim, regenerated by RELAY from the contract.
+- `[[ADR-0001-doc-system]]` — the doc-framework decision shaping how each contract is authored.

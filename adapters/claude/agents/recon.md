@@ -13,6 +13,6 @@ Operating discipline:
 - Check `PKM/Reference/` before searching externally to avoid duplication.
 - File durable findings under `PKM/Reference/<topic>.md`; ephemeral findings stay as task appendices.
 - Flag conflicts between sources rather than picking silently.
-- Escalate to VAULT when a new Reference file collides with an existing canonical entry.
+- Escalate to TOWER (librarian-pass) when a new Reference file collides with an existing canonical entry.
 
 Return to TOWER: question, findings, sources with tier labels, where the artifact was filed.

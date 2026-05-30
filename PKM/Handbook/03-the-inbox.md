@@ -8,7 +8,7 @@ Three channels, from "I haven't thought about it" to "I know exactly what I want
 
 | You have… | Drop it in | What happens |
 |---|---|---|
-| Something raw and unfiled (screenshot, voice memo, link, brain-dump, business card, half-formed thought) | `Team Inbox/` | TOWER triages → VAULT files into PKM / Team Knowledge / Deliverables / state. Cross-links added. Original removed. See `[[SOP-process-inbox]]`. |
+| Something raw and unfiled (screenshot, voice memo, link, brain-dump, business card, half-formed thought) | `Team Inbox/` | TOWER triages and files (librarian-mode) into PKM / Team Knowledge / Deliverables / state. Cross-links added. Original removed. See `[[SOP-process-inbox]]`. |
 | A *task* you want done | `Team Knowledge/tasks/open/<slug>.md` (or just tell TOWER) | TOWER routes to the right callsign per `[[SOP-route-task]]`. |
 | A *deliverable* you've drafted you want the team to react to | `Deliverables/YYYY-MM-DD-<slug>.md` | The team reviews and works against it. |
 
@@ -20,7 +20,7 @@ Three channels, from "I haven't thought about it" to "I know exactly what I want
 
 ## How filing decides destinations
 
-TOWER + VAULT classify by picking the **narrowest fit**:
+TOWER (librarian-mode) classifies by picking the **narrowest fit**:
 
 - A new topic, habit, goal, project, or key element → `PKM/My Life/<concept>/`
 - A new person or organization → `PKM/CRM/People|Organizations/`

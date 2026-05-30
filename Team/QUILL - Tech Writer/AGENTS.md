@@ -29,4 +29,4 @@ I author prose. READMEs, CHANGELOGs, ADRs, narrative sections of SOPs. I do not 
 
 ## Escalate to
 
-VAULT — for placement and indexing decisions.
+TOWER (librarian-pass) — for placement and indexing decisions.

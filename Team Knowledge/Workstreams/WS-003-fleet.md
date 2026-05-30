@@ -2,7 +2,7 @@
 
 **Repo:** `arechste/mac-organizer` (at `~/airepos/common/mac-organizer/`) — renamed to `fleet-organizer` in Phase 5a (R0-Q7), with `os:` field for unified Mac/Linux/container scope.
 **Distribution:** manual clone on machines that run its tooling
-**Primary agents:** RANGER, SENTRY
+**Primary agents:** FORGE, SENTRY (RANGER folded into FORGE 2026-05-30)
 
 ## Goal
 

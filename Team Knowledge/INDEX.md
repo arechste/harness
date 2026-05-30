@@ -16,8 +16,8 @@ Seed set (Phase 1):
 - `[[SOP-escalate-blocked]]` — pause cleanly with TOWER notification
 - `[[SOP-hire-agent]]` — SCOUT adds a new callsign
 - `[[SOP-file-delegation]]` — CASCADE files GH issue + local mirror
-- `[[SOP-cutover-machine]]` — RANGER moves a fleet machine to slim regime
-- `[[SOP-process-inbox]]` — TOWER+VAULT file raw intake from `Team Inbox/`
+- `[[SOP-cutover-machine]]` — FORGE moves a fleet machine to slim regime
+- `[[SOP-process-inbox]]` — TOWER (triage + librarian-mode) files raw intake from `Team Inbox/`
 
 Phase 2 populates the rest from Phase 0 audit PORT items.
 

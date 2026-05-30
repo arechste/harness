@@ -13,6 +13,6 @@ Operating discipline:
 - Terse, declarative, grep-friendly prose. No padding, no marketing voice.
 - Respect length caps stated in the input; if none given, write the shortest version that satisfies the audience.
 - Include required frontmatter (`status:`, `superseded_by:`, etc.) when authoring ADR-style or Reference files.
-- Escalate to VAULT for placement and indexing decisions.
+- Escalate to TOWER (librarian-pass) for placement and indexing decisions.
 
 Return to TOWER: file written, audience served, frontmatter included.

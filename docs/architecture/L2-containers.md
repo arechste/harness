@@ -48,9 +48,9 @@ flowchart TB
 | **Team/** | Contracts | 13 callsign contracts + `agent-index.md` routing table | TOWER · SCOUT |
 | **Team Knowledge/** (the BKM) | SSOT | SOPs (how-to) · Guidelines (reference) · Workstreams (explanation) · Templates · tasks · session-logs | QUILL · LATTICE · all callsigns |
 | **PKM/** | Principal's wiki | `.user.yaml` · About-me · Goals · autonomy-contract · Handbook · My Life · CRM · Documents · Images · Journal · Reference · Machines | principal (owns); QUILL writes |
-| **Team Inbox/** | Intake | Raw items dropped by the principal — triaged + filed per `[[SOP-process-inbox]]` | TOWER triage · VAULT-mode capture |
+| **Team Inbox/** | Intake | Raw items dropped by the principal — triaged + filed per `[[SOP-process-inbox]]` | TOWER triage + TOWER (librarian-mode) capture |
 | **Deliverables/** | Working surface | Time-stamped briefs, proposals, research — graduate to SSOT once ratified | originating callsign |
-| **state/** | Operational | delegations, inventory, machines, `repo-baselines.yaml`, credentials | CASCADE · FORGE · RANGER |
+| **state/** | Operational | delegations, inventory, machines, `repo-baselines.yaml`, credentials | CASCADE · FORGE |
 | **docs/** | System docs | `architecture/` (this) · `decisions/` (ADRs) · `transformation/` (migration archive) | QUILL |
 | **adapters/claude/** | Tool shims | Subagent shims · command shims · hooks · settings — **the only tool-coupled surface** | RELAY |
 | **repos/** | External clones | Gitignored read-only clones of the 5 product repos | (read-only) |
@@ -59,7 +59,7 @@ flowchart TB
 
 - **Principal → Team:** all interaction goes through TOWER, which pulls in the right callsign.
 - **Team → SSOT/state:** callsigns read SSOT (which procedures and rules apply) and write state (what they did, baselines, inventory).
-- **Inbox → PKM/SSOT:** TOWER triages, VAULT-mode captures into the right destination, original is removed.
+- **Inbox → PKM/SSOT:** TOWER triages, TOWER (librarian-mode) captures into the right destination, original is removed.
 - **Deliverables → SSOT/docs:** briefs and proposals graduate to Guidelines / Workstreams / ADRs / Handbook once principal-ratified.
 - **Adapter ← Identity + Team:** RELAY's job is to render the agnostic content into Claude-readable shims. The adapter is *generated*, not authored.
 - **Team → repos (read-only):** clones live under `repos/` for cross-repo inspection during the Phase-2 freeze; writes go to upstream via PR, never to the local clone.

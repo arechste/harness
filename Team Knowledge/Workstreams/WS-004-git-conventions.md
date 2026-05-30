@@ -2,7 +2,7 @@
 
 **Repo:** `arechste/git-organizer` (at `~/airepos/common/git-organizer/`)
 **Distribution:** consulted on the workshop; conventions enforced on all repos
-**Primary agents:** CASCADE, VAULT
+**Primary agents:** CASCADE, TOWER (librarian-pass) (VAULT folded into TOWER 2026-05-30)
 
 ## Goal
 

@@ -1,6 +1,6 @@
 # Principal Handbook
 
-Instruction for you (the principal) on how harness, the team, and the day-to-day loop work. Curated by the team (QUILL writes, VAULT runs the librarian pass); you own the final content.
+Instruction for you (the principal) on how harness, the team, and the day-to-day loop work. Curated by the team (QUILL writes, TOWER runs the librarian-pass at session close); you own the final content.
 
 Read in order, or jump to what you need:
 
