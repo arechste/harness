@@ -42,6 +42,20 @@ Four pillars govern how the team handles security, AI attribution, licensing, an
 - **Audit transitive dependencies for known vulnerabilities.** Use the language's standard tool (`npm audit`, `cargo audit`, `pip-audit`, …). Treat the report as input to a decision, not a checkbox.
 - **Never add dependencies from forks** without a clear justification recorded in the PR or an ADR. A fork is a maintenance liability; if it's the right call, it's the right call documented.
 
+## Operational tooling (ratified 2026-05-31)
+
+`security-standards-track` #4 translates the Supply Chain and License pillars above into concrete, **informational** CI. Posture and rationale: `[[ADR-0002-supply-chain]]`. This is sized to harness's actual use — personal infra, homelab, the shared `ntnxlab.ch` lab — **not** a public-OSS provenance regime. The driving risks are the principal's: never run known-vulnerable code, never take on a legally-risky or badly-owned dependency.
+
+| Concern | What runs | Blocking? |
+|---|---|---|
+| **Known vulnerabilities** | language-native audit (`npm audit` / `pip-audit` / `cargo audit`) + `grype` over the dependency set | no — surfaces, does not gate |
+| **License & attribution** | dependency license scan (e.g. `syft` SBOM license fields); flag non-permissive licenses and any **license change** on update | no — flags for principal review |
+| **Owner / project health** | new-dependency review per the pillars above (maintainer, recency, registry); OpenSSF Scorecard optional | no |
+
+- **License is first-class**, not an afterthought: this work is used in a Nutanix PreSales context and must not expose the principal's employer to legal risk. A copyleft creep, an OSS→source-available relicense, or a stripped attribution is a **flag-and-decide** event, recorded in a task or ADR.
+- **Prefer standard libraries; vendor a fork only with a recorded justification** — a vendored fork is a deliberate, documented choice.
+- **Deferred** (not needed at this tier): SLSA build provenance, SBOM attestation, artifact/tag signing. Revisit only if a repo is published for outside consumption.
+
 ---
 
 ## Provenance
