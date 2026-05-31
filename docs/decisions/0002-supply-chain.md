@@ -1,13 +1,9 @@
 ---
-form: explanation
-last-verified: 2026-05-31
-owner: TOWER
-status: authoritative
-id: ADR-0002
-title: Supply-chain & dependency posture
+form: reference
+status: accepted
 date: 2026-05-31
-status-adr: accepted
-deciders: [principal, TOWER]
+deciders: principal · TOWER
+last-verified: 2026-05-31
 ---
 
 # ADR-0002 — Supply-chain & dependency posture

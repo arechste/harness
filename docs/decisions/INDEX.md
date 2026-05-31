@@ -12,6 +12,7 @@ One decision per file, MADR 4.0.0 abbreviated format. Format and conventions in 
 | # | Title | Status | Date | Supersedes | Superseded by |
 |---|---|---|---|---|---|
 | [0001](0001-doc-system.md) | Doc system — Diátaxis · C4 · MADR · Mermaid | accepted | 2026-05-30 | — | — |
+| [0002](0002-supply-chain.md) | Supply-chain & dependency posture | accepted | 2026-05-31 | — | — |
 
 ---
 

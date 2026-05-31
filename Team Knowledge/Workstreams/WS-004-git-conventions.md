@@ -20,7 +20,7 @@ See `state/delegations/open/git-organizer-*.md`.
 
 ## Conventions in force (Phase 2 wiring)
 
-- `[[GL-NNN-commit-format]]`
+- `[[GL-006-commit-format]]`
 - `[[GL-NNN-label-taxonomy]]`
 - `[[GL-NNN-pr-review-tiers]]`
 - `[[GL-NNN-merge-lifecycle]]` (planned)

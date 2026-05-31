@@ -9,7 +9,7 @@ status: authoritative
 
 **Status:** Authoritative. **Owner:** TOWER (policy); CASCADE (operational); principal (ratification).
 
-Resolves the long-dangling `GL-NNN-commit-format` reference. Extends `[[GL-001-commit-autonomy]]` (which defines only the subject envelope) with the body and trailer contract. Adopted 2026-05-31 (`security-standards-track` #2).
+Resolves the long-dangling commit-format reference (formerly an unnumbered placeholder). Extends `[[GL-001-commit-autonomy]]` (which defines only the subject envelope) with the body and trailer contract. Adopted 2026-05-31 (`security-standards-track` #2).
 
 ## Purpose
 
