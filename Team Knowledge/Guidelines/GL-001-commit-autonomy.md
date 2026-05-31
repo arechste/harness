@@ -64,9 +64,9 @@ CASCADE (and any callsign filing a delegation) follows:
 
 - Always work on a feature branch — never push directly to `main`
 - Branch names: `team/<topic>` or `<callsign-lower>/<topic>` (e.g., `cascade/port-git-conventions`)
-- Conventional commit format: `<type>(<scope>): <subject>` — see `[[GL-NNN-commit-format]]` once PORTed in Phase 2
+- Conventional commit format: `<type>(<scope>): <subject>` — full contract in `[[GL-006-commit-format]]`
 - One logical change per commit; multiple small commits over one giant squash
-- Commit trailer: `Co-Authored-By: Claude/Opus/harness@<hostname> <noreply@anthropic.com>` (the principal's commit-trailer convention, applied to team commits too — preserves authorship lineage even without signing)
+- Commit trailers: `Harness-Agent: <CALLSIGN>` + `Co-Authored-By:` (model) + `Refs:` (task) — the recommended-not-enforced block defined in `[[GL-006-commit-format]]`; preserves authorship lineage even without signing
 - PR body from `harness/state/delegations/open/<repo>-<N>.md` mirror (the local SSOT); `gh pr create --body-file <mirror>`
 
 ## When the team CAN push directly
