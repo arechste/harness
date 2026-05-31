@@ -10,6 +10,7 @@ Validation that runs in GitHub Actions. Workflow YAML lives under `.github/workf
 | `link-check.yml` | push + PR + weekly cron | **lychee** — broken markdown links (internal + external). Phase 2: informational (`fail: false`) until forward-references resolve |
 | `diagram-parse.yml` | push + PR | **mmdc** — every Mermaid block validated by extraction + render-to-SVG. Fails on parse error |
 | `doc-freshness.yml` | weekly cron + workflow_dispatch | Front-matter `last-verified` ≤ MAX_AGE_DAYS (default 180); informational |
+| `credential-expiry.yml` | weekly cron + workflow_dispatch | Reads `state/credentials/INVENTORY.yaml`, warns on credentials inside T-14/T-7; informational (non-strict) |
 
 ## Scripts
 

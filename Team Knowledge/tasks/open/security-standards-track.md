@@ -36,13 +36,13 @@ Roadmap: `Deliverables/2026-05-30-signing-and-security-standards.md`. Three prim
 ## In-flight / built this session
 
 - `state/credentials/INVENTORY.yaml` — first credential inventory (secret-free, evidence-based).
-- `ci/scripts/check-credential-expiry.sh` — expiry alert (T-14/T-7), reads inventory metadata only; **not yet wired to cron**.
+- `ci/scripts/check-credential-expiry.sh` — expiry alert (T-14/T-7), reads inventory metadata only; **wired to weekly cron** 2026-05-31 via `.github/workflows/credential-expiry.yml` (Mon 08:00 UTC, informational/non-strict).
 
 ## Acceptance criteria
 
 - [ ] Each decision 1–6 resolved adopt-or-drop with the principal
 - [ ] Resulting GL-006 / GL-002,004,005 amendments / ADR-0002 authored (one atomic commit each)
-- [ ] PAT inventory completed (BLOCKED on `[[project_browser-profiles-prereq]]`) and `check-credential-expiry.sh` wired to weekly cron
+- [ ] PAT inventory completed (BLOCKED on `[[project_browser-profiles-prereq]]`) and `check-credential-expiry.sh` wired to weekly cron — **cron half done 2026-05-31** (`.github/workflows/credential-expiry.yml`); PAT inventory still blocked
 - [ ] Standing cross-consistency gate added to `[[SOP-close-session]]` librarian-pass (so the GL audit runs every session)
 
 ## Blockers
@@ -52,3 +52,4 @@ Roadmap: `Deliverables/2026-05-30-signing-and-security-standards.md`. Three prim
 ## Event log
 
 - 2026-05-30T19:00:00Z — filed by TOWER at session close; carries the security/signing track out of build-doc-system so it has its own resume point.
+- 2026-05-31 — CASCADE wired `check-credential-expiry.sh` to weekly cron via `.github/workflows/credential-expiry.yml` (Mon 08:00 UTC, ubuntu-latest, pinned yq v4.44.3, non-strict). Logs-only for now; issue-creating alerts + `--strict` deferred until the PAT inventory is populated.
