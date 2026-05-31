@@ -83,6 +83,40 @@ and [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
 
 Six categories per Keep-a-Changelog: **Added · Changed · Deprecated · Removed · Fixed · Security**. Each version dated; latest on top; `[Unreleased]` tracks next.
 
+## release-please ↔ Keep-a-Changelog mapping (ratified 2026-05-31)
+
+`security-standards-track` #6 (resolves audit AUD-009). release-please groups commits by Conventional-Commit `type`; its `changelog-sections` config renames each group to a Keep-a-Changelog heading so both standards coexist. **Locked mapping:**
+
+| Commit `type` | Changelog section | Shown? |
+|---|---|---|
+| `feat` | Added | yes |
+| `fix` | Fixed | yes |
+| `refactor`, `perf`, `revert` | Changed | yes |
+| `docs` | Changed | yes |
+| `chore`, `test`, `ci`, `build` | — | hidden |
+
+```jsonc
+// release-please-config.json
+"changelog-sections": [
+  { "type": "feat",     "section": "Added"   },
+  { "type": "fix",      "section": "Fixed"   },
+  { "type": "refactor", "section": "Changed" },
+  { "type": "perf",     "section": "Changed" },
+  { "type": "revert",   "section": "Changed" },
+  { "type": "docs",     "section": "Changed" },
+  { "type": "chore",    "section": "Changed", "hidden": true },
+  { "type": "test",     "section": "Changed", "hidden": true },
+  { "type": "ci",       "section": "Changed", "hidden": true },
+  { "type": "build",    "section": "Changed", "hidden": true }
+]
+```
+
+**Breaking changes carry upgrade steps.** A `BREAKING CHANGE:` footer (or `type!:`) must say what a consumer has to *do* to adopt the release — the helper to run, the path to migrate, the setting to change. release-please surfaces it at the top of the release notes; this is the signal the fleet (the principal's machines) reads before pulling an artifact.
+
+**Audience & scope.** The changelog/releases serve the **shipped artifacts** the principal consumes on his fleet (dotfiles, dotclaude) and any repo worked on **outside harness** — a standalone git repo should explain what it is and how it evolved, for future human collaborators with no harness access (e.g. `ntnxlab.ch`). `git-organizer` / `fleet-organizer` follow the same discipline; a repo that never releases simply has no changelog.
+
+**Caveat.** Conventional Commits is type-oriented; Keep-a-Changelog is change-oriented. The KaC sections **Deprecated**, **Removed**, **Security** have no automatic commit-type source — surface them via a `BREAKING CHANGE:` footer or a manual changelog edit when they apply.
+
 ## Cross-repo dependency pinning
 
 When one repo depends on another (a SOP cites a Guideline, a script consumes a config from a sibling repo, a chezmoi template embeds another repo's content):
