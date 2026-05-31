@@ -119,7 +119,19 @@ cd harness && git add state/credentials/github-pat.sops.yaml && \
 
 The seeding step uses `op` directly because the principal is interactive. Agents never seed.
 
-## Rotation
+## Rotation policy (ratified 2026-05-31)
+
+`security-standards-track` #5. **No fixed cadence yet** — set it only after the inventory is complete and each credential's blast-radius is assessed. Rotating blind, on a calendar, over an unknown inventory is theatre.
+
+Sequence:
+
+1. **Inventory + blast-radius first.** `state/credentials/INVENTORY.yaml` is the surface; `ci/scripts/check-credential-expiry.sh` (weekly cron) warns at T-14/T-7. The PAT walk is still blocked on `[[project_browser-profiles-prereq]]`.
+2. **Rotate highest-blast-radius first**, deliberately, once the inventory exists.
+3. Candidate cadence to ratify later: 90d high-blast / 180d low-blast — **not adopted now**.
+
+**Recoverability rule (hard).** harness is operated *by* the team; an in-flight credential change carries real lock-out risk. Therefore: **never rotate or revoke the last working credential without a tested fallback in hand** — a second valid credential, or a verified ability to re-mint. The principal must have full confidence the team can be recovered (or recover itself) before any rotation proceeds. If no fallback is verified, stop and escalate (`[[SOP-escalate-blocked]]`).
+
+## Rotation procedure
 
 When a credential rotates:
 
@@ -129,6 +141,20 @@ When a credential rotates:
 4. Old credential should be revoked at the source (GitHub, etc.) once the new one is verified working
 
 SENTRY periodically audits: vault items with `expires:` tags approaching their date, sops files older than N months. Findings → tasks for the principal.
+
+## Break-glass (interim posture, 2026-05-31)
+
+`security-standards-track` #5. Emergency access if normal credential paths fail. The interim posture is the principal's existing setup — **no new artifacts required**:
+
+- Principal retains interactive 1Password account access; 1P **master-password recovery codes** exist.
+- Recovery keys for important credentials the team and principal use are **stored in 1P** itself.
+- As long as the principal can reach 1P interactively, full recovery is possible.
+
+**Single point of failure:** total loss of 1P *account* access (not merely a lost device). That is the one scenario the interim posture does not cover.
+
+**Deferred mitigation:** a printed 1Password Emergency Kit in a physical safe would close that gap. The principal is reluctant to keep paper and may adopt it later — it is *recommended, not required* now. Until then the residual risk is accepted and recorded here.
+
+Agents never self-serve from any break-glass path; recovery is principal-executed.
 
 ## Bootstrap order
 
