@@ -27,6 +27,12 @@ team work        →  feature branch (unsigned commits)  →  PR
                                                        main
 ```
 
+## Signing decision (ratified 2026-05-31)
+
+The unsigned-team / principal-signs-at-merge model above is a **deliberate, ratified choice** (`security-standards-track` #1) — not a transitional gap. Rationale: it removes the per-commit 1Password approval friction the principal explicitly rejected, while the squash-merge signature on `main` still carries provenance. The `Harness-Agent` trailer (see `[[GL-006-commit-format]]`) records *which callsign* produced each commit — the "who/where" signal the principal reviews by.
+
+**Revisit trigger:** stand up a dedicated team/bot signing key (held in 1P per `[[GL-002-credential-custody]]`) when work begins on shared repos outside harness — specifically the `ntnxlab.ch` / `github.com/ntnxlab-ch` org, where commits are collaborated on with humans who have no harness access and need verifiable provenance.
+
 ## Enforcement layers
 
 ### Layer 1: `harness/.gitconfig` (per-repo override)
