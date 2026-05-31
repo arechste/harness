@@ -40,8 +40,8 @@ Roadmap: `Deliverables/2026-05-30-signing-and-security-standards.md`. Three prim
 
 ## Acceptance criteria
 
-- [ ] Each decision 1–6 resolved adopt-or-drop with the principal
-- [ ] Resulting GL-006 / GL-002,004,005 amendments / ADR-0002 authored (one atomic commit each)
+- [x] Each decision 1–7 resolved with the principal — 2026-05-31
+- [x] Resulting GL / ADR amendments authored, one atomic commit each — 2026-05-31
 - [ ] PAT inventory completed (BLOCKED on `[[project_browser-profiles-prereq]]`) and `check-credential-expiry.sh` wired to weekly cron — **cron half done 2026-05-31** (`.github/workflows/credential-expiry.yml`); PAT inventory still blocked
 - [ ] Standing cross-consistency gate added to `[[SOP-close-session]]` librarian-pass (so the GL audit runs every session)
 
@@ -53,3 +53,12 @@ Roadmap: `Deliverables/2026-05-30-signing-and-security-standards.md`. Three prim
 
 - 2026-05-30T19:00:00Z — filed by TOWER at session close; carries the security/signing track out of build-doc-system so it has its own resume point.
 - 2026-05-31 — CASCADE wired `check-credential-expiry.sh` to weekly cron via `.github/workflows/credential-expiry.yml` (Mon 08:00 UTC, ubuntu-latest, pinned yq v4.44.3, non-strict). Logs-only for now; issue-creating alerts + `--strict` deferred until the PAT inventory is populated.
+- 2026-05-31 — **all 7 decisions made with the principal and authored, one atomic commit each** (`2e1a5f7`, `b8d3c92`, supply-chain, GL-002, GL-004, GL-005):
+  1. **Signing** → keep current (unsigned team, principal-signs-at-merge); ratified + revisit-trigger (bot key at ntnxlab.ch collab). GL-001.
+  2. **Commit-format** → authored **GL-006** (next free number; the old "skeleton" reading was a glitch). `Harness-Agent` trailer = the who/where signal; recommended, **not** CI-enforced, skippable in corner cases. Danglers resolved (GL-001, WS-004).
+  3. (folded into #2 — trailers not enforced.)
+  4. **Supply-chain** → reframed to the principal's risks (vuln-avoidance, **license/attribution as legal-risk guard**, owner-health); informational tier; SLSA/attestation deferred. GL-005 + **ADR-0002**.
+  5. **Rotation/break-glass** → defer cadence (inventory + blast-radius first); **hard recoverability rule**; interim break-glass = existing 1P access + recovery codes (no paper kit; recommended-not-required). GL-002.
+  6. **Changelog** → `changelog-sections` mapping locked + breaking-change upgrade notes; scoped to shipped artifacts + standalone-repo readability (ntnxlab.ch). GL-004.
+  7. **Attribution** → carried by the GL-006 trailer; GL-005 pillar linked. The larger ship→issue→triage→fix **feedback loop** spun out to `feedback-loop-design`.
+  - Remaining open: PAT inventory (blocked on browser profiles), supply-chain CI wiring (build task), SOP-close-session cross-consistency gate.
