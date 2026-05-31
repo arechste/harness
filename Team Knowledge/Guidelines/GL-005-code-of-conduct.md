@@ -26,7 +26,7 @@ Four pillars govern how the team handles security, AI attribution, licensing, an
 
 - **Add `<!-- AI-assisted -->` markers** in generated docs where the host project, vendor, or law requires.
 - **Declare AI involvement** where expected by project/org policy. When in doubt, declare — under-attribution is harder to undo than over-attribution.
-- The team's commit trailer (per `[[GL-001-commit-autonomy]]`) is one form of attribution; project-level policies may require additional markers in the artifact itself.
+- The team's commit trailer — the `Harness-Agent` + `Co-Authored-By` block defined in `[[GL-006-commit-format]]` (autonomy model in `[[GL-001-commit-autonomy]]`) — is the team's standing attribution and the principal's overview of how harness was involved; project-level policies may require additional markers in the artifact itself.
 
 ## License & Attribution
 
